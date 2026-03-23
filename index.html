@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ann Debbie Bedrijo | Marketing & Business Support</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Root Variables --- */
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
@@ -19,7 +19,6 @@
             --transition: all 0.3s ease;
         }
 
-        /* --- Global Styles --- */
         * {
             margin: 0;
             padding: 0;
@@ -31,16 +30,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -49,19 +39,19 @@
             padding: 0 2rem;
         }
 
-        section {
-            padding: 80px 0;
-        }
+        section { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3.5rem; }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: #000;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
             transition: var(--transition);
             border: 2px solid var(--accent-color);
+            text-decoration: none;
         }
 
         .btn:hover {
@@ -73,49 +63,50 @@
 
         /* --- Hero Section --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+            padding: 120px 0 80px;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
         }
 
-        .hero .tagline {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            display: block;
+        .hero .tagline { color: var(--accent-color); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 1rem; display: block; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero .headline { font-size: 1.6rem; max-width: 850px; margin: 0 auto 1.5rem; }
+        .hero .subheadline { color: var(--text-dim); max-width: 700px; margin: 0 auto 2.5rem; font-weight: 300; }
+
+        /* --- Photo/Highlights Section --- */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
-        .hero .headline {
-            font-size: 1.8rem;
-            max-width: 800px;
-            margin: 0 auto 1rem;
+        .photo-item {
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+            position: relative;
         }
 
-        .hero .subheadline {
-            color: var(--text-dim);
-            max-width: 650px;
-            margin: 0 auto 2rem;
-            font-weight: 300;
-        }
+        .photo-item img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-item:hover { border-color: var(--accent-color); transform: translateY(-5px); }
 
         /* --- Services Section --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,74 +115,35 @@
 
         .service-card {
             background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: var(--transition);
+            padding: 2.5rem;
+            border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-        }
-
-        .service-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
+        .service-card h3 { color: var(--accent-color); margin-bottom: 1rem; }
 
         /* --- Skills Section --- */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        .skills-container { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
         .skill-badge {
-            background: rgba(34, 197, 94, 0.1);
+            background: rgba(34, 197, 94, 0.05);
             border: 1px solid var(--accent-color);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
             font-weight: bold;
             transition: var(--transition);
         }
+        .skill-badge:hover { background: var(--accent-color); color: #000; }
 
-        .skill-badge:hover {
-            background: var(--accent-color);
-            color: #000;
-        }
+        /* --- Contact & Footer --- */
+        .contact { text-align: center; background-color: var(--card-bg); }
+        .contact p { margin-bottom: 2.5rem; color: var(--text-dim); }
+        footer { padding: 4rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
 
-        /* --- Contact Section --- */
-        .contact {
-            text-align: center;
-            background-color: var(--card-bg);
-        }
-
-        .contact p {
-            margin-bottom: 2rem;
-            color: var(--text-dim);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
-
-        footer a {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        /* --- Responsive --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero .headline { font-size: 1.4rem; }
             section { padding: 60px 0; }
         }
     </style>
@@ -200,33 +152,45 @@
 
     <header class="hero">
         <div class="container">
+            <img src="profile.jpg" alt="Ann Debbie Bedrijo" class="hero-img">
             <span class="tagline">Marketing and Business Support</span>
             <h1>Ann Debbie Bedrijo</h1>
             <p class="headline">I help busy founders stay organized, manage leads, and keep their marketing consistent.</p>
-            <p class="subheadline">From inbox and calendar management to lead tracking and content support, I bring structure to your daily operations so you can focus on growing your business.</p>
+            <p class="subheadline">I bring structure to your daily operations so you can focus on growth.</p>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=deebeebedrijo72@gmail.com" target="_blank" class="btn">Work With Me</a>
         </div>
     </header>
 
+    <section id="highlights">
+        <div class="container">
+            <h2 class="section-title">Professional Highlights</h2>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="profile.jpg" alt="Ann Debbie Bedrijo Professional Portrait">
+                </div>
+                </div>
+        </div>
+    </section>
+
     <section id="services">
         <div class="container">
-            <h2 class="section-title">My Services</h2>
+            <h2 class="section-title">Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Inbox & Email Management</h3>
-                    <p>I clear the clutter, filter priorities, and ensure your clients receive timely, professional responses every single day.</p>
+                    <h3>Inbox Management</h3>
+                    <p>Organizing communications and ensuring priorities are handled promptly.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Calendar & Scheduling</h3>
-                    <p>Stop the back-and-forth. I manage your appointments and protect your time so your schedule works for you, not against you.</p>
+                    <h3>Calendar Scheduling</h3>
+                    <p>Managing appointments and protecting your time for deep work.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Lead & Client Support</h3>
-                    <p>I help track potential opportunities and maintain client relationships, ensuring no lead falls through the cracks.</p>
+                    <h3>Lead Support</h3>
+                    <p>Tracking prospects and nurturing relationships with client precision.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Marketing Assistance</h3>
-                    <p>Providing essential support for your social media, content updates, and campaigns to keep your brand visible and consistent.</p>
+                    <h3>Marketing Support</h3>
+                    <p>Keeping your brand consistent across digital platforms.</p>
                 </div>
             </div>
         </div>
@@ -234,7 +198,7 @@
 
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-badge">HTML</div>
                 <div class="skill-badge">CSS</div>
@@ -245,15 +209,14 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <p>Have a project or need support? Reach out and let’s get started.</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Ready to streamline your business? Let's connect.</p>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=deebeebedrijo72@gmail.com" target="_blank" class="btn">Email Me</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <a href="https://github.com/your-username" target="_blank">View My GitHub</a>
             <p>&copy; 2026 Ann Debbie Bedrijo. All Rights Reserved.</p>
         </div>
     </footer>
