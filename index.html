@@ -1,20 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ann Debbie Bedrijo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debbie | Virtual Assistant</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* GLOBAL */
+section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ABOUT */
+.about {
+  background: #f9f9f9;
+}
+
+/* SKILLS */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.skills-list div {
+  padding: 12px;
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+/* EXPERIENCE */
+.card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  background: #000;
+  color: #fff;
+}
+
+.contact p {
+  color: #ddd;
+}
+
+.contact a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+</style>
+
 </head>
 
-<body style="background:#0f172a; color:white; text-align:center; font-family:Arial; padding:50px;">
+<body>
 
-<h1>Ann Debbie Bedrijo</h1>
-<p>Marketing and Business Support</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
 
-<p>I help busy founders stay organized and manage their business.</p>
+    <div>
+      <h1>Bookkeeper and General Virtual Assistant</h1>
+      <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
 
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank">
-  Work With Me
+    <div>
+      <img src="https://via.placeholder.com/400" alt="Your Photo">
+    </div>
 
+  </div>
+</section>
 
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I handle bookkeeping and admin tasks with precision. I track expenses, manage records, and keep operations structured using Excel and QuickBooks. I focus on accuracy and consistency so you stay in control of your business.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <div class="container">
+    <h2>Skills</h2>
+
+    <div class="skills-list">
+      <div>QuickBooks Online</div>
+      <div>Microsoft Excel</div>
+      <div>Data Entry</div>
+      <div>Financial Tracking</div>
+      <div>Admin Support</div>
+      <div>Email Management</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="container">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <p>Managed bookkeeping for a homeowners association. Tracked income, expenses, and financial reports.</p>
+    </div>
+
+    <div class="card">
+      <p>Handled admin and front desk operations in a yoga studio. Managed schedules, records, and client support.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Email: yourname@email.com</p>
+    <p><a href="#">LinkedIn Profile</a></p>
+    <p>Available for work</p>
+  </div>
+</section>
+
+</body>
+</html>
 
 
 
