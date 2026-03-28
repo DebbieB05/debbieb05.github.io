@@ -10,6 +10,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #222;
+  background: #f0f4f8; /* brand background color */
 }
 
 /* GLOBAL */
@@ -40,7 +41,7 @@ p {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #000;
+  background: #0073e6; /* brand color */
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
@@ -48,7 +49,7 @@ p {
 }
 
 .btn:hover {
-  background: #333;
+  background: #005bb5;
 }
 
 /* HERO */
@@ -72,7 +73,7 @@ p {
 
 /* ABOUT */
 .about {
-  background: #f9f9f9;
+  background: #e6f0ff; /* lighter brand shade */
 }
 
 /* SKILLS */
@@ -97,20 +98,42 @@ p {
   margin-bottom: 20px;
 }
 
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.projects-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
 /* CONTACT */
 .contact {
   text-align: center;
-  background: #000;
+  background: #0073e6; /* brand color */
   color: #fff;
 }
 
 .contact p {
-  color: #ddd;
+  color: #fff;
 }
 
 .contact a {
   color: #fff;
   text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* LOGO */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
 }
 
 /* MOBILE */
@@ -121,7 +144,6 @@ p {
   }
 }
 </style>
-
 </head>
 
 <body>
@@ -131,13 +153,13 @@ p {
   <div class="container hero-grid">
 
     <div>
-      <h1>Bookkeeper and General Virtual Assistant</h1>
-      <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
-      <a href="#contact" class="btn">Hire Me</a>
+      <img src="images/profile.jpg" alt="Debbie Profile Photo">
     </div>
 
     <div>
-      <img src="https://via.placeholder.com/400" alt="images/profile.jpg">
+      <h1>Bookkeeper and General Virtual Assistant</h1>
+      <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
+      <a href="mailto:debeebedrijo72@gmail.com" class="btn">Work With Me</a>
     </div>
 
   </div>
@@ -146,10 +168,13 @@ p {
 <!-- ABOUT -->
 <section class="about">
   <div class="container">
+    <img src="images/logo.png" alt="Logo" class="logo">
     <h2>About Me</h2>
     <p>
       I handle bookkeeping and admin tasks with precision. I track expenses, manage records, and keep operations structured using Excel and QuickBooks. I focus on accuracy and consistency so you stay in control of your business.
     </p>
+    <a href="resume.pdf" target="_blank" class="btn">View Resume</a>
+    <a href="portfolio.pdf" target="_blank" class="btn">View Portfolio</a>
   </div>
 </section>
 
@@ -157,7 +182,6 @@ p {
 <section>
   <div class="container">
     <h2>Skills</h2>
-
     <div class="skills-list">
       <div>QuickBooks Online</div>
       <div>Microsoft Excel</div>
@@ -166,7 +190,6 @@ p {
       <div>Admin Support</div>
       <div>Email Management</div>
     </div>
-
   </div>
 </section>
 
@@ -174,15 +197,23 @@ p {
 <section>
   <div class="container">
     <h2>Experience</h2>
-
     <div class="card">
       <p>Managed bookkeeping for a homeowners association. Tracked income, expenses, and financial reports.</p>
     </div>
-
     <div class="card">
       <p>Handled admin and front desk operations in a yoga studio. Managed schedules, records, and client support.</p>
     </div>
+  </div>
+</section>
 
+<!-- PROJECTS -->
+<section>
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <img src="images/project1.png" alt="Lead Tracking Project">
+      <img src="images/project2.png" alt="Content Plan Project">
+    </div>
   </div>
 </section>
 
@@ -190,16 +221,11 @@ p {
 <section class="contact" id="contact">
   <div class="container">
     <h2>Contact</h2>
-    <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank">
-  Work With Me
-    <p><a href="#">LinkedIn Profile</a></p>
+    <p>Email: <a href="mailto:debeebedrijo72@gmail.com">debeebedrijo72@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/anndebbiebedrijo" target="_blank">LinkedIn Profile</a></p>
     <p>Available for work</p>
   </div>
 </section>
 
 </body>
 </html>
-
-
-
-
