@@ -23,6 +23,12 @@ body {
   text-align: center;
 }
 
+/* LOGO */
+.logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
 /* PROFILE */
 .profile {
   width: 120px;
@@ -60,7 +66,7 @@ body {
 
 /* SECTION */
 section { margin-top: 80px; }
-h2 { color: #22c55e; }
+h2 { color: #22c55e; margin-bottom: 30px; }
 
 /* SERVICES */
 .grid {
@@ -73,9 +79,10 @@ h2 { color: #22c55e; }
   background: #1e293b;
   padding: 20px;
   border-radius: 10px;
+  text-align: center;
 }
 
-.card i { color: #22c55e; }
+.card i { color: #22c55e; font-size: 28px; margin-bottom: 10px; display: block; }
 
 /* PORTFOLIO */
 .portfolio-grid {
@@ -135,7 +142,7 @@ h2 { color: #22c55e; }
   margin-top: 40px;
 }
 
-.social i { color: #22c55e; }
+.social i { color: #22c55e; font-size: 24px; }
 
 /* FOOTER */
 .footer {
@@ -148,8 +155,11 @@ h2 { color: #22c55e; }
 <body>
 <div class="container">
 
+<!-- LOGO -->
+<img src="images/logo.png" class="logo" alt="Logo">
+
 <!-- HERO -->
-<img src="images/profile.jpg" class="profile">
+<img src="images/profile.jpg" class="profile" alt="Ann Debbie Bedrijo">
 <div class="name">Ann Debbie Bedrijo</div>
 <div class="headline">I help busy founders stay organized and grow without chaos.</div>
 <div class="subheadline">I manage your inbox, leads, and daily operations so you stay focused on revenue.</div>
@@ -164,10 +174,10 @@ h2 { color: #22c55e; }
 <section>
 <h2>Services</h2>
 <div class="grid">
-<div class="card"><i data-lucide="mail"></i><h3>Inbox</h3><p>Organized communication.</p></div>
-<div class="card"><i data-lucide="calendar"></i><h3>Calendar</h3><p>Structured schedule.</p></div>
-<div class="card"><i data-lucide="users"></i><h3>Leads</h3><p>Tracked and managed.</p></div>
-<div class="card"><i data-lucide="bar-chart"></i><h3>Marketing</h3><p>Consistent support.</p></div>
+<div class="card"><i data-lucide="mail"></i><h3>Inbox</h3><p>Organize emails and prioritize messages.</p></div>
+<div class="card"><i data-lucide="calendar"></i><h3>Calendar</h3><p>Manage appointments and reminders.</p></div>
+<div class="card"><i data-lucide="users"></i><h3>Leads</h3><p>Track leads and client communications.</p></div>
+<div class="card"><i data-lucide="bar-chart"></i><h3>Marketing</h3><p>Support consistent content and campaigns.</p></div>
 </div>
 </section>
 
@@ -177,25 +187,27 @@ h2 { color: #22c55e; }
 
 <div class="portfolio-grid">
 
+<!-- Content Plan -->
 <div class="portfolio-card">
 <div class="portfolio-image">
-<img src="images/project1.jpg">
-<div class="overlay"><a href="#">View Project</a></div>
-</div>
-<div class="portfolio-content">
-<h3>Lead Tracker</h3>
-<p>System for managing leads.</p>
-</div>
-</div>
-
-<div class="portfolio-card">
-<div class="portfolio-image">
-<img src="images/project2.jpg">
+<img src="images/project1.png" alt="Content Plan">
 <div class="overlay"><a href="#">View Project</a></div>
 </div>
 <div class="portfolio-content">
 <h3>Content Plan</h3>
-<p>Weekly posting system.</p>
+<p>Organized weekly content calendar for consistent posting and engagement.</p>
+</div>
+</div>
+
+<!-- Lead Tracker -->
+<div class="portfolio-card">
+<div class="portfolio-image">
+<img src="images/project2.png" alt="Lead Tracker">
+<div class="overlay"><a href="#">View Project</a></div>
+</div>
+<div class="portfolio-content">
+<h3>Lead Tracker</h3>
+<p>Structured system for tracking leads, follow-ups, and client communication.</p>
 </div>
 </div>
 
@@ -205,13 +217,13 @@ h2 { color: #22c55e; }
 <!-- HOW I WORK -->
 <section>
 <h2>How I Work</h2>
-<p>I organize, execute, and keep everything moving.</p>
+<p>I organize, execute, and keep everything moving to make your operations efficient and stress-free.</p>
 </section>
 
 <!-- WHY -->
 <section>
 <h2>Why Me</h2>
-<p>I improve your workflow, not just complete tasks.</p>
+<p>I improve your workflow and processes, not just complete tasks, so you save time and grow faster.</p>
 </section>
 
 <!-- CONTACT -->
