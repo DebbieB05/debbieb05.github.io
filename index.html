@@ -9,8 +9,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #222;
-  background: #f0f4f8; /* brand background color */
+  background: #0f3d3e; /* midnight teal */
+  color: #ffffff;
 }
 
 /* GLOBAL */
@@ -33,7 +33,7 @@ h2 {
 }
 
 p {
-  color: #555;
+  color: #e0f2f1;
   line-height: 1.6;
 }
 
@@ -41,15 +41,16 @@ p {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #0073e6; /* brand color */
-  color: #fff;
+  background: #ffffff;
+  color: #0f3d3e;
   text-decoration: none;
   border-radius: 6px;
   margin-top: 15px;
+  font-weight: bold;
 }
 
 .btn:hover {
-  background: #005bb5;
+  background: #cfe8e8;
 }
 
 /* HERO */
@@ -73,7 +74,7 @@ p {
 
 /* ABOUT */
 .about {
-  background: #e6f0ff; /* lighter brand shade */
+  background: #124b4c;
 }
 
 /* SKILLS */
@@ -85,23 +86,22 @@ p {
 
 .skills-list div {
   padding: 12px;
-  background: #f1f1f1;
+  background: #145a5b;
   border-radius: 6px;
 }
 
 /* EXPERIENCE */
 .card {
   padding: 20px;
-  background: #fff;
+  background: #145a5b;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   margin-bottom: 20px;
 }
 
 /* PROJECTS */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
@@ -113,27 +113,23 @@ p {
 /* CONTACT */
 .contact {
   text-align: center;
-  background: #0073e6; /* brand color */
-  color: #fff;
-}
-
-.contact p {
-  color: #fff;
-}
-
-.contact a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
+  background: #0b2c2d;
+  padding: 50px 20px;
 }
 
 /* LOGO */
 .logo {
   width: 120px;
   margin-bottom: 20px;
+}
+
+/* LINKS */
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* MOBILE */
@@ -144,31 +140,28 @@ p {
   }
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
-
     <div>
-      <img src="profile.jpg" alt="Debbie Profile Photo">
+      <img src="images/profile.jpg" alt="Profile Photo">
     </div>
-
     <div>
       <h1>Bookkeeper and General Virtual Assistant</h1>
       <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
       <a href="mailto:debeebedrijo72@gmail.com" class="btn">Work With Me</a>
     </div>
-
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about">
   <div class="container">
-    <img src="logo.png" alt="Logo" class="logo">
+    <img src="images/logo.png" alt="Logo" class="logo">
     <h2>About Me</h2>
     <p>
       I handle bookkeeping and admin tasks with precision. I track expenses, manage records, and keep operations structured using Excel and QuickBooks. I focus on accuracy and consistency so you stay in control of your business.
@@ -218,11 +211,10 @@ p {
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact">
   <div class="container">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:debeebedrijo72@gmail.com" class="btn" target="_blank">
-  Work With Me
+    <p>Email: <a href="mailto:debeebedrijo72@gmail.com">debeebedrijo72@gmail.com</a></p>
     <p><a href="https://www.linkedin.com/in/anndebbiebedrijo" target="_blank">LinkedIn Profile</a></p>
     <p>Available for work</p>
   </div>
