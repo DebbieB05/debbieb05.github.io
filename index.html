@@ -67,24 +67,35 @@
             display: inline-block;
             padding: 14px 30px;
             background: var(--accent-green);
-            color: #000;
+            color: #000 !important;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             transition: 0.3s ease;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn:hover { transform: translateY(-3px); background: #16a34a; box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4); }
 
-        /* SKILLS & EXPERIENCE ACCORDION */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green) !important;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover { background: var(--accent-green); color: #000 !important; }
+
+        /* GRID LAYOUTS */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
+        /* ACCORDIONS */
         .accordion-item {
             background: var(--card-bg);
             border-radius: 12px;
@@ -115,8 +126,6 @@
             color: var(--text-muted);
         }
 
-        .accordion-content li { margin-bottom: 8px; }
-
         /* PROJECTS */
         .project-card {
             background: var(--deep-teal);
@@ -125,10 +134,7 @@
             display: flex;
             flex-direction: column;
             transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.05);
         }
-
-        .project-card:hover { transform: translateY(-10px); }
 
         .project-card img {
             width: 100%;
@@ -137,18 +143,14 @@
             border-bottom: 3px solid var(--accent-green);
         }
 
-        .project-info { padding: 25px; }
-        .project-info h4 { margin-top: 0; font-size: 1.3rem; margin-bottom: 10px; }
+        .project-info { padding: 25px; flex-grow: 1; }
 
-        /* CONTACT & FOOTER */
-        .contact { text-align: center; background: var(--deep-teal); }
-        footer { padding: 40px 0; text-align: center; font-size: 0.9rem; color: #64748b; }
-
-        /* MOBILE RESPONSIVENESS */
+        /* MOBILE */
         @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .profile-img { max-width: 280px; margin-bottom: 20px; }
-            h2 { font-size: 2rem; }
+            .btn-outline { margin: 10px 0 0 0; width: 100%; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -157,23 +159,16 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="profile-wrapper">
-                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400?text=Debbie';">
+                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400';">
             </div>
             <div>
                 <h3 style="color: var(--accent-green); font-weight: 400; letter-spacing: 1px;">VIRTUAL ASSISTANT & BOOKKEEPER</h3>
                 <h1 style="margin: 10px 0 20px 0;">Ann Debbie Bedrijo</h1>
-                <p>I help entrepreneurs and business owners streamline their operations, maintain flawless financial records, and reclaim their time by handling the essential details.</p>
-                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Work With Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" style="background: #124b4c;">
-        <div class="container">
-            <h2>About Me</h2>
-            <div style="max-width: 850px; margin: auto; text-align: center;">
-                <p>My background is built on real-world responsibility. From managing complex bookkeeping for homeowners associations to organizing the front-desk operations of a busy yoga studio, I’ve mastered the art of staying organized under pressure.</p>
-                <p style="margin-top: 20px;">I don't just complete tasks; I build systems. Whether it’s cleaning up messy data in Excel or tracking leads for growth, I make sure your business runs smoothly behind the scenes while you focus on the big picture.</p>
+                <p>Helping business owners streamline operations and maintain flawless financial records so they can focus on growth.</p>
+                
+                <a href="mailto:debeebedrijo72@gmail.com?subject=Inquiry&body=Hi Debbie," class="btn">Email Me</a>
+                
+                <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
             </div>
         </div>
     </section>
@@ -186,9 +181,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">QuickBooks Online</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Record and categorize daily transactions</li>
-                            <li>Track business income and expenses</li>
-                            <li>Maintain clean and accurate financial records</li>
+                            <li>Daily transaction recording</li>
+                            <li>Income/Expense tracking</li>
+                            <li>Clean financial reporting</li>
                         </ul>
                     </div>
                 </div>
@@ -196,9 +191,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Microsoft Excel</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Data cleaning and organization</li>
-                            <li>Formula-based reporting</li>
-                            <li>Detailed tracking sheets</li>
+                            <li>Data cleaning & organization</li>
+                            <li>Advanced formula reporting</li>
+                            <li>Business tracking sheets</li>
                         </ul>
                     </div>
                 </div>
@@ -206,19 +201,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Data Entry</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Accurate and rapid data input</li>
-                            <li>Consistency across multiple file formats</li>
-                            <li>Digital record management</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">Email Management</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Inbox zero strategy and folder organization</li>
-                            <li>Filtering and prioritizing urgent messages</li>
-                            <li>Professional client correspondence</li>
+                            <li>Rapid, accurate input</li>
+                            <li>Consistency across files</li>
+                            <li>Database management</li>
                         </ul>
                     </div>
                 </div>
@@ -226,19 +211,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Lead Generation</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Targeted market and client research</li>
-                            <li>Lead list building and verification</li>
-                            <li>Follow-up tracking and CRM support</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">Social Media Management</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Content planning and scheduling</li>
-                            <li>Consistent brand posting</li>
-                            <li>Engagement and basic metric tracking</li>
+                            <li>Market & client research</li>
+                            <li>Verified lead list building</li>
+                            <li>CRM management</li>
                         </ul>
                     </div>
                 </div>
@@ -253,13 +228,13 @@
                 <div class="accordion-item">
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">HOA Bookkeeper</button>
                     <div class="accordion-content">
-                        <p>Managed income and expense tracking for homeowners associations, ensuring all financial reports were accurate and records were audit-ready.</p>
+                        <p>Managed finances for homeowners associations, ensuring accurate income tracking and professional record keeping.</p>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Yoga Studio Admin</button>
                     <div class="accordion-content">
-                        <p>Directed front-desk operations, handled client scheduling, and managed daily administrative workflows to support studio growth.</p>
+                        <p>Managed front-desk operations, handled client scheduling, and streamlined daily administrative workflows.</p>
                     </div>
                 </div>
             </div>
@@ -271,49 +246,42 @@
             <h2>Featured Projects</h2>
             <div class="grid-layout">
                 <div class="project-card">
-                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x220?text=Lead+Management+Sheet';">
-                    <div class="project-info">
-                        <h4>Content Strategy</h4>
-                        <p>A 30-day scheduled content plan for consistent social media growth.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x220?text=Social+Media+Plan';">
+                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x220';">
                     <div class="project-info">
                         <h4>Lead Tracking System</h4>
-                        <p>An automated Excel system for tracking prospects and sales progress.</p>
+                        <p>Automated Excel system for sales progress.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/profile.jpg" alt="TVIS Resources" onerror="this.src='https://via.placeholder.com/400x220?text=Digital+Resources';">
+                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x220';">
+                    <div class="project-info">
+                        <h4>Content Strategy</h4>
+                        <p>30-day scheduled growth plan.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project3.png" alt="TVIS eBook" onerror="this.src='https://via.placeholder.com/400x220?text=The+Voice+I+Silenced';">
                     <div class="project-info">
                         <h4>The Voice I Silenced</h4>
-                        <p>A library of digital business tools and guides on Gumroad.</p>
-                        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn primary"> style="padding: 10px 20px; width: 100%; text-align: center; margin-top: 15px;">Visit Gumroad Shop</a>
+                        <p>Business tools and empowering eBooks.</p>
+                        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn" style="width: 100%; margin-top: 10px;">Get the eBooks</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Let’s Build Something Great</h2>
-            <p>Ready to reclaim your time? Send me a message and let's get to work.</p>
-            <div style="margin-top: 30px;">
-                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Email Me Today</a>
-                <p style="margin-top: 25px;">
-                    <a href="https://www.linkedin.com/in/anndebbiebedrijo" target="_blank" style="color: var(--accent-green); text-decoration: none; font-weight: bold;">LinkedIn Profile →</a>
-                </p>
-                <p style="color: var(--accent-green); font-size: 0.9rem; margin-top: 10px;">Available for Freelance & Long-term Contracts</p>
+    <footer class="contact">
+        <div class="container" style="padding: 60px 0;">
+            <h2>Let's Get Started</h2>
+            <p>Ready to reclaim your time? Let's connect.</p>
+            <div style="margin-top: 20px;">
+                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Email Me</a>
+                <a href="portfolio.pdf" download class="btn btn-outline">View Full Portfolio (PDF)</a>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2026 Ann Debbie Bedrijo. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 5px;">https://debbieb05.github.io/</p>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: #64748b;">
+                © 2026 Ann Debbie Bedrijo | <a href="https://www.linkedin.com/in/anndebbiebedrijo" style="color: var(--accent-green);">LinkedIn</a>
+            </p>
         </div>
     </footer>
 
@@ -321,14 +289,9 @@
         function toggleAccordion(btn) {
             const content = btn.nextElementSibling;
             const isOpen = content.style.display === "block";
-            
-            // Close all contents for accordion effect
             document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
-            
-            // Toggle clicked
             content.style.display = isOpen ? "none" : "block";
         }
     </script>
-
 </body>
 </html>
