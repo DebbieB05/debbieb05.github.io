@@ -67,9 +67,14 @@ p {
   align-items: center;
 }
 
-.hero img {
-  width: 100%;
-  border-radius: 12px;
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+}
 }
 
 /* ABOUT */
@@ -85,19 +90,35 @@ p {
   margin-top: 8px;
 }
 
+.skill-item {
+  text-align: center;
+}
+
 .skill-item button {
-  width: 100%;
-  text-align: left;
-  padding: 12px;
-  background: #1e293b;
-  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  background: #22c55e;
+  color: #000;
   border: none;
-  border-radius: 6px;
+  border-radius: 999px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
+  width: auto; /* 🔥 fixes long full-width button */
+}
+
+.skill-item button:hover {
+  background: #16a34a;
+  transform: scale(1.05);
 }
 
 .skill-item button:hover {
   background: #334155;
+}
+  .skills-section .skill-item button {
+  background: #22c55e;
+  color: #000;
 }
 
 /* EXPERIENCE */
@@ -107,6 +128,9 @@ p {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+  .experience-section .skill-item button {
+  background: #38bdf8;
+  color: #000;
 
 /* PROJECTS */
 .btn.primary {
@@ -124,6 +148,38 @@ p {
   transform: scale(1.08);
   background: #16a34a;
 }
+    .portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-card {
+  text-align: center;
+}
+    img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  p { font-size: 14px; }
+
+  .portfolio-card {
+    width: 100%;
+  }
+}
+    
+    
+    
   
 /* CONTACT */
 .contact {
@@ -320,6 +376,7 @@ a:hover {
     </div>
   </div>
 </section>
+    <section class="skills-section">
 <!-- PROJECTS -->
 <section>
   <div class="container">
@@ -347,7 +404,9 @@ a:hover {
     <p style="margin-top:15px; color:#22c55e;">
   Let me handle the details so you can focus on what matters most.
 </p>
-
+<div class="portfolio-container">
+  <!-- your project cards -->
+</div>
 <!-- CONTACT -->
 <section class="contact">
   <div class="container">
