@@ -79,15 +79,29 @@ p {
 
 /* SKILLS */
 .skills-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.skills-list div {
-  padding: 12px;
-  background: #145a5b;
-  border-radius: 6px;
+.skill {
+  background: #1e293b;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.skill:hover {
+  background: #22c55e;
+  color: #000;
+  transform: translateY(-3px) scale(1.05);
+  border-color: #22c55e;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 /* EXPERIENCE */
@@ -192,22 +206,23 @@ a:hover {
 </section>
 
 <!-- SKILLS -->
-<!-- SKILLS -->
 <section>
   <div class="container">
     <h2>Skills</h2>
+
     <div class="skills-list">
-      <div>QuickBooks Online</div>
-      <div>Microsoft Excel</div>
-      <div>Data Entry</div>
-      <div>Financial Tracking</div>
-      <div>Admin Support</div>
-      <div>Email Management</div>
-      <div>Social Media Management</div>
-      <div>Marketing Support</div>
-      <div>Business Support</div>
-      <div>Lead Generation</div>
+      <span class="skill">QuickBooks Online</span>
+      <span class="skill">Microsoft Excel</span>
+      <span class="skill">Data Entry</span>
+      <span class="skill">Financial Tracking</span>
+      <span class="skill">Admin Support</span>
+      <span class="skill">Email Management</span>
+      <span class="skill">Social Media Management</span>
+      <span class="skill">Marketing Support</span>
+      <span class="skill">Business Support</span>
+      <span class="skill">Lead Generation</span>
     </div>
+
   </div>
 </section>
 
