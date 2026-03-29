@@ -306,4 +306,51 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project3.png" alt="The Voice I Sil
+                    <img src="images/project3.png" alt="The Voice I Silenced eBook" onerror="this.src='https://via.placeholder.com/400x250';">
+                    <div class="project-info">
+                        <h4>The Voice I Silenced</h4>
+                        <p>Empowering eBooks and business resources.</p>
+                        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn" style="width: 100%; margin-top: 10px;">Get the eBooks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--deep-teal); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <img src="images/logo.png" alt="Debbie Logo" class="logo" style="margin: 0 auto 20px auto;" onerror="this.style.display='none'">
+            
+            <h2>Let’s Build Something Great</h2>
+            <p>Ready to reclaim your time? Let's connect.</p>
+            <div style="margin-top: 30px;">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie..." target="_blank" class="btn">Email Me Today</a>
+                <a href="portfolio.pdf" download class="btn btn-outline">View Portfolio (PDF)</a>
+            </div>
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #64748b;">
+                © 2026 Ann Debbie Bedrijo | <a href="https://www.linkedin.com/in/anndebbiebedrijo" style="color: var(--accent-green); text-decoration: none;">LinkedIn</a>
+            </p>
+            <p style="font-size: 0.8rem; color: #475569;">https://debbieb05.github.io/</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.display === "block";
+            document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
+            content.style.display = isOpen ? "none" : "block";
+        }
+
+        // BACK TO TOP VISIBILITY
+        window.onscroll = function() {
+            var btn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
