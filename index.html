@@ -78,11 +78,11 @@ p {
 }
 
 /* SKILLS */
-.skills-list {
-  max-width: 700px;
-  margin: auto;
-  display: grid;
-  gap: 10px;
+.skill-details {
+  display: none;   /* 🔴 THIS hides it initially */
+  padding-left: 20px;
+  color: #cbd5f5;
+  margin-top: 8px;
 }
 
 .skill-item button {
@@ -94,19 +94,10 @@ p {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
 }
 
 .skill-item button:hover {
   background: #334155;
-}
-
-.skill-details {
-  display: none;
-  padding-left: 20px;
-  color: #cbd5f5;
-  margin-top: 8px;
 }
 
 /* EXPERIENCE */
@@ -323,3 +314,15 @@ a:hover {
 
 </body>
 </html>
+
+<script>
+function toggleSkill(btn) {
+  const details = btn.nextElementSibling;
+
+  if (details.style.display === "block") {
+    details.style.display = "none";
+  } else {
+    details.style.display = "block";
+  }
+}
+</script>
