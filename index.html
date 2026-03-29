@@ -109,17 +109,22 @@ p {
 }
 
 /* PROJECTS */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+.btn.primary {
+  display: inline-block;
+  padding: 14px 24px;
+  background: #22c55e;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.projects-grid img {
-  width: 100%;
-  border-radius: 10px;
+.btn.primary:hover {
+  transform: scale(1.08);
+  background: #16a34a;
 }
-
+  
 /* CONTACT */
 .contact {
   text-align: center;
@@ -293,7 +298,9 @@ a:hover {
       </a>
       
       <a href="https://thevoiceisilenced.gumroad.com/" target="_blank">
-        <img src="https://raw.githubusercontent.com/DebbieB05/debbieb05.github.io/main/images/project3.png">
+        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn primary">
+  CLICK ME
+</a>
       </a>
 
     </div>
