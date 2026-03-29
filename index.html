@@ -79,24 +79,34 @@ p {
 
 /* SKILLS */
 .skills-list {
-  list-style: disc;
   max-width: 700px;
-  margin: 20px auto;
+  margin: auto;
+  display: grid;
+  gap: 10px;
+}
+
+.skill-item button {
+  width: 100%;
   text-align: left;
+  padding: 12px;
+  background: #1e293b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.skill-item button:hover {
+  background: #334155;
+}
+
+.skill-details {
+  display: none;
+  padding-left: 20px;
   color: #cbd5f5;
-  line-height: 1.8;
-}
-
-.skills-list li {
-  margin-bottom: 10px;
-}
-
-.skill:hover {
-  background: #22c55e;
-  color: #000;
-  transform: translateY(-3px) scale(1.05);
-  border-color: #22c55e;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  margin-top: 8px;
 }
 
 /* EXPERIENCE */
