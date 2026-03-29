@@ -148,10 +148,17 @@ a:hover {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .portfolio-card img {
+    max-height: 160px;
   }
 }
 </style>
@@ -195,20 +202,28 @@ a:hover {
       onerror="this.onerror=null;this.src='https://via.placeholder.com/120x120?text=Logo';"
     >
 
-    <section>
+  <section>
   <div class="container">
     <h2>About Me</h2>
 
     <p>
-      I support business owners who feel overwhelmed managing daily tasks, emails, and follow-ups. I bring structure to your operations so nothing gets missed and your business runs smoothly.
+      I didn’t start as a virtual assistant. I started by managing real responsibilities. Handling finances, organizing records, and keeping day-to-day operations running without things falling apart.
     </p>
 
     <p>
-      With experience in bookkeeping and admin support, I handle the details that take up your time. From tracking finances to managing schedules and client communication, I keep things organized so you can focus on growing your business.
+      In a homeowners association, I handled bookkeeping. I tracked income and expenses and made sure records stayed accurate. In a yoga studio, I managed the front desk. Scheduling, client support, and daily admin tasks were part of my routine.
     </p>
 
     <p>
-      I value accuracy, consistency, and clear communication. When you work with me, you get someone reliable who takes your business seriously.
+      That experience shaped how I work. I stay organized. I pay attention to details. I follow through. I don’t let tasks sit or get lost.
+    </p>
+
+    <p>
+      Now I support business owners who need structure. If your inbox is piling up, your leads are not tracked, or your schedule feels messy, I step in and fix that.
+    </p>
+
+    <p style="margin-top:15px; color:#22c55e;">
+      You focus on growing your business. I make sure everything behind the scenes runs smoothly.
     </p>
 
   </div>
@@ -329,6 +344,10 @@ a:hover {
   </div>
 </section>
 
+    <p style="margin-top:15px; color:#22c55e;">
+  Let me handle the details so you can focus on what matters most.
+</p>
+
 <!-- CONTACT -->
 <section class="contact">
   <div class="container">
@@ -355,3 +374,7 @@ function toggleSkill(btn) {
   }
 }
 </script>
+    
+    <footer style="text-align:center; margin-top:60px; color:#94a3b8; font-size:14px;">
+  © 2026 Ann Debbie Bedrijo. All rights reserved.
+</footer>
