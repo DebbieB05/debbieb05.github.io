@@ -1,434 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Debbie | Virtual Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debbie | Virtual Assistant & Bookkeeper</title>
+    <style>
+        :root {
+            --primary-teal: #0f3d3e;
+            --accent-green: #22c55e;
+            --light-teal: #145a5b;
+            --text-white: #ffffff;
+            --text-muted: #cbd5e1;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f3d3e; /* midnight teal */
-  color: #ffffff;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: var(--primary-teal);
+            color: var(--text-white);
+            scroll-behavior: smooth;
+        }
 
-/* GLOBAL */
-section {
-  padding: 80px 20px;
-}
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-}
+        section { padding: 80px 0; }
 
-h1 {
-  font-size: 42px;
-}
+        h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; line-height: 1.2; }
+        h2 { font-size: 2rem; color: var(--accent-green); margin-bottom: 1.5rem; text-align: center; }
+        p { color: var(--text-muted); line-height: 1.7; font-size: 1.1rem; }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent-green);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s transform ease;
+            border: none;
+            cursor: pointer;
+        }
 
-p {
-  color: #e0f2f1;
-  line-height: 1.6;
-}
+        .btn:hover { transform: translateY(-3px); background: #16a34a; }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #ffffff;
-  color: #0f3d3e;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 15px;
-  font-weight: bold;
-}
+        /* HERO SECTION */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, #1a5e5f, #0f3d3e);
+        }
 
-.btn:hover {
-  background: #cfe8e8;
-}
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
+        .profile-wrapper { text-align: center; }
+        .profile-img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1/1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Trendy organic shape */
+            object-fit: cover;
+            border: 5px solid var(--accent-green);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  
-}
-  
-/* ABOUT */
-.about {
-  background: #124b4c;
-}
+        /* SKILLS ACCORDION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
 
-/* SKILLS */
-.skill-details {
-  display: none;   /* 🔴 THIS hides it initially */
-  padding-left: 20px;
-  color: #cbd5f5;
-  margin-top: 8px;
-}
+        .skill-item {
+            background: var(--light-teal);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
-.skill-item {
-  text-align: center;
-}
+        .skill-trigger {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            color: white;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.skill-item button {
-  display: inline-block;
-  font-size: 16px;
-  padding: 10px 20px;
-  background: #22c55e;
-  color: #000;
-  border: none;
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  width: auto; /* 🔥 fixes long full-width button */
-}
+        .skill-trigger::after { content: '+'; color: var(--accent-green); font-size: 1.5rem; }
 
-.skill-item button:hover {
-  background: #16a34a;
-  transform: scale(1.05);
-}
+        .skill-details {
+            display: none;
+            padding: 0 20px 20px 40px;
+            color: var(--text-muted);
+        }
 
-.skill-item button:hover {
-  background: #334155;
-}
-  .skills-section .skill-item button {
-  background: #22c55e;
-  color: #000;
-}
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-/* EXPERIENCE */
-.card {
-  padding: 20px;
-  background: #145a5b;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-  .experience-section .skill-item button {
-  background: #38bdf8;
-  color: #000;
+        .project-card {
+            background: #0b2c2d;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
 
-/* PROJECTS */
-.btn.primary {
-  display: inline-block;
-  padding: 14px 24px;
-  background: #22c55e;
-  color: #000;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-}
+        .project-card:hover { transform: scale(1.03); }
 
-.btn.primary:hover {
-  transform: scale(1.08);
-  background: #16a34a;
-}
-    .portfolio-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
 
-.portfolio-card {
-  text-align: center;
-}
-    .img.profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #22c55e;
-} 
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+        .project-info { padding: 20px; text-align: center; }
 
-.container {
-  padding: 20px;
-}
-
-@media (max-width: 600px) {
-  h1 { font-size: 26px; }
-  h2 { font-size: 22px; }
-  p { font-size: 14px; }
-
-  .portfolio-card {
-    width: 100%;
-  }
-}
-       
-  
-/* CONTACT */
-.contact {
-  text-align: center;
-  background: #0b2c2d;
-  padding: 50px 20px;
-}
-
-/* LOGO */
-.logo {
-  width: 80px;
-  margin-bottom: 20px;
-}
-
-/* LINKS */
-a {
-  color: #ffffff;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* MOBILE */
-.portfolio-card img {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-@media (max-width: 600px) {
-  .portfolio-card img {
-    max-height: 160px;
-  }
-}
-</style>
-
+        /* FOOTER & CONTACT */
+        .contact { text-align: center; background: #081f20; }
+        
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .profile-img { max-width: 250px; margin-bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <div class="container hero-grid">
-    
-    <!-- Profile Photo -->
-    <div>
-        <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile">
-        onerror="this.onerror=null;this.src='https://via.placeholder.com/400?text=Profile+Photo';"
-      >
-    </div>
-    
-    <!-- Name, Headline & Button -->
-    <div>
-      <h3>Ann Debbie Bedrijo</h3>
-      <h1>Bookkeeper and General Virtual Assistant</h1>
-      <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie, I need help with..." target="_blank" class="btn primary">
-  Work With Me
-</a>
-      
-  </div>
-</section>
-<!-- ABOUT SECTION -->
-<section class="about">
-  <div class="container">
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="profile-wrapper">
+                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400?text=Debbie';">
+            </div>
+            <div>
+                <h3 style="color: var(--accent-green); margin-bottom: 0;">Hello, I'm Ann Debbie Bedrijo</h3>
+                <h1>Bookkeeper & General Virtual Assistant</h1>
+                <p>I help entrepreneurs reclaim their time by managing finances, organizing messy inboxes, and streamlining daily operations with precision.</p>
+                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Work With Me</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Logo -->
-    <img 
-      src="images/logo.png" 
-      alt="Debbie Logo" 
-      class="logo"
-      onerror="this.onerror=null;this.src='https://via.placeholder.com/120x120?text=Logo';"
-    >
+    <section id="about" style="background: #124b4c;">
+        <div class="container">
+            <h2>About Me</h2>
+            <div style="max-width: 800px; margin: auto; text-align: center;">
+                <p>I didn’t start as a virtual assistant; I started by managing real responsibilities. From handling HOA bookkeeping to managing the front desk of a busy yoga studio, I've built my career on accuracy and follow-through.</p>
+                <p style="margin-top: 20px;">Now, I support business owners who need structure. If your inbox is piling up or your leads aren't tracked, I step in so you can focus on growth.</p>
+            </div>
+        </div>
+    </section>
 
-  <section>
-  <div class="container">
-    <h2>About Me</h2>
+    <section>
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <button class="skill-trigger" onclick="toggleSkill(this)">QuickBooks Online</button>
+                    <div class="skill-details">
+                        <ul>
+                            <li>Record daily transactions</li>
+                            <li>Track income and expenses</li>
+                            <li>Maintain accurate financial records</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <button class="skill-trigger" onclick="toggleSkill(this)">Microsoft Excel</button>
+                    <div class="skill-details">
+                        <ul>
+                            <li>Organize and clean data</li>
+                            <li>Create automated reports</li>
+                            <li>Data visualization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <button class="skill-trigger" onclick="toggleSkill(this)">Lead Generation</button>
+                    <div class="skill-details">
+                        <ul>
+                            <li>Market research</li>
+                            <li>Building verified lead lists</li>
+                            <li>CRM management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      I didn’t start as a virtual assistant. I started by managing real responsibilities. Handling finances, organizing records, and keeping day-to-day operations running without things falling apart.
-    </p>
+    <section style="background: #124b4c;">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x200?text=Lead+Tracking+Sheet';">
+                    <div class="project-info">
+                        <h4>Lead Tracking System</h4>
+                        <p>Streamlined sales pipeline.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x200?text=Content+Strategy';">
+                    <div class="project-info">
+                        <h4>Social Media Strategy</h4>
+                        <p>30-day content calendar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      In a homeowners association, I handled bookkeeping. I tracked income and expenses and made sure records stayed accurate. In a yoga studio, I managed the front desk. Scheduling, client support, and daily admin tasks were part of my routine.
-    </p>
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Get Started</h2>
+            <p>Ready to organize your business? Let's talk.</p>
+            <div style="margin-top: 30px;">
+                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Send an Email</a>
+                <p style="margin-top: 20px;">
+                    <a href="https://www.linkedin.com/in/anndebbiebedrijo" target="_blank" style="color: var(--accent-green); text-decoration: none; font-weight: bold;">Connect on LinkedIn →</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      That experience shaped how I work. I stay organized. I pay attention to details. I follow through. I don’t let tasks sit or get lost.
-    </p>
+    <footer style="padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 0.9rem;">© 2026 Ann Debbie Bedrijo. All rights reserved.</p>
+    </footer>
 
-    <p>
-      Now I support business owners who need structure. If your inbox is piling up, your leads are not tracked, or your schedule feels messy, I step in and fix that.
-    </p>
-
-    <p style="margin-top:15px; color:#22c55e;">
-      You focus on growing your business. I make sure everything behind the scenes runs smoothly.
-    </p>
-
-  </div>
-</section>
-<!-- SKILLS -->
-<section>
-  <div class="container">
-    <h2>Skills & Expertise</h2>
-
-    <div class="skills-list">
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">QuickBooks Online</button>
-        <ul class="skill-details">
-          <li>Record daily transactions</li>
-          <li>Track income and expenses</li>
-          <li>Maintain accurate financial records</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Microsoft Excel</button>
-        <ul class="skill-details">
-          <li>Organize and clean data</li>
-          <li>Create simple reports</li>
-          <li>Track business information</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Data Entry</button>
-        <ul class="skill-details">
-          <li>Accurate data input</li>
-          <li>Maintain organized records</li>
-          <li>Ensure consistency across files</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Email Management</button>
-        <ul class="skill-details">
-          <li>Organize inbox and folders</li>
-          <li>Prioritize important messages</li>
-          <li>Respond or flag emails for action</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Lead Generation</button>
-        <ul class="skill-details">
-          <li>Research potential clients</li>
-          <li>Build and update lead lists</li>
-          <li>Track follow-ups and status</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Social Media Management</button>
-        <ul class="skill-details">
-          <li>Plan and schedule content</li>
-          <li>Maintain consistent posting</li>
-          <li>Support engagement tracking</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- EXPERIENCE -->
-<section>
-  <div class="container">
-    <h2>Experience</h2>
-
-    <div class="skills-list">
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Bookkeeping – Homeowners Association</button>
-        <ul class="skill-details">
-          <li>Managed income and expense tracking</li>
-          <li>Maintained financial records and reports</li>
-          <li>Ensured accurate and organized bookkeeping</li>
-        </ul>
-      </div>
-
-      <div class="skill-item">
-        <button onclick="toggleSkill(this)">Admin & Front Desk – Yoga Studio</button>
-        <ul class="skill-details">
-          <li>Managed schedules and appointments</li>
-          <li>Handled client inquiries and support</li>
-          <li>Organized records and daily operations</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-    <section class="skills-section">
-<!-- PROJECTS -->
-<section>
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      
-      <a href="#" target="_blank">
-        <img src="images/project1.png" alt="Lead Tracking Project">
-      </a>
-      
-      <a href="#" target="_blank">
-        <img src="images/project2.png" alt="Content Plan Project">
-      </a>
-      
-      <a href="https://thevoiceisilenced.gumroad.com/" target="_blank">
-        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn primary">
-  CLICK ME
-</a>
-      </a>
-      <img src="./images/profile.jpg" class="profile-img">
-
-    </div>
-  </div>
-</section>
-
-    <p style="margin-top:15px; color:#22c55e;">
-  Let me handle the details so you can focus on what matters most.
-</p>
-<div class="portfolio-container">
-  <!-- your project cards -->
-</div>
-<!-- CONTACT -->
-<section class="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie, I need help with..." target="_blank" class="btn primary">
-  Work With Me
-</a>
-    <p><a href="https://www.linkedin.com/in/anndebbiebedrijo" target="_blank">LinkedIn Profile</a></p>
-    <p>Available for work</p>
-  </div>
-</section>
-
+    <script>
+        function toggleSkill(btn) {
+            const details = btn.nextElementSibling;
+            const isOpen = details.style.display === "block";
+            
+            // Close all other details first (Optional - for accordion effect)
+            document.querySelectorAll('.skill-details').forEach(el => el.style.display = 'none');
+            
+            // Toggle clicked one
+            details.style.display = isOpen ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
-
-<script>
-function toggleSkill(btn) {
-  const details = btn.nextElementSibling;
-
-  if (details.style.display === "block") {
-    details.style.display = "none";
-  } else {
-    details.style.display = "block";
-  }
-}
-</script>
-    
-    <footer style="text-align:center; margin-top:60px; color:#94a3b8; font-size:14px;">
-  © 2026 Ann Debbie Bedrijo. All rights reserved.
-</footer>
