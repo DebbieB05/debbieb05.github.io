@@ -14,7 +14,7 @@
             --text-muted: #cbd5e1;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -35,6 +35,14 @@
         h1, h2, h3 { margin: 0; line-height: 1.2; }
         h2 { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; color: var(--accent-green); }
         p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1.05rem; }
+
+        /* LOGO STYLE */
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
 
         /* HERO SECTION */
         .hero {
@@ -145,10 +153,30 @@
 
         .project-info { padding: 25px; flex-grow: 1; }
 
+        /* BACK TO TOP */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-green);
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            display: none; /* hidden by default */
+            z-index: 100;
+        }
+
         /* MOBILE */
         @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .profile-img { max-width: 280px; margin-bottom: 20px; }
+            .profile-img { max-width: 280px; margin: 0 auto 20px auto; }
+            .logo { margin: 0 auto 20px auto; }
             .btn-outline { margin: 10px 0 0 0; width: 100%; }
             .btn { width: 100%; }
         }
@@ -156,15 +184,20 @@
 </head>
 <body>
 
+    <a href="#" id="backToTop">↑</a>
+
     <section class="hero">
         <div class="container hero-grid">
             <div class="profile-wrapper">
-                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Photo';">
+                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400';">
             </div>
             <div>
+                <img src="images/logo.png" alt="Debbie Logo" class="logo" onerror="this.style.display='none'">
+                
                 <h3 style="color: var(--accent-green); font-weight: 400; letter-spacing: 1px;">VIRTUAL ASSISTANT & BOOKKEEPER</h3>
                 <h1 style="margin: 10px 0 20px 0;">Ann Debbie Bedrijo</h1>
                 <p>I help you stay organized, track finances, and manage daily operations with accuracy.</p>
+                
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie, I need help with..." target="_blank" class="btn">Work With Me</a>
                 <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
             </div>
@@ -259,53 +292,18 @@
             <h2>Featured Projects</h2>
             <div class="grid-layout">
                 <div class="project-card">
-                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x250?text=Lead+Project';">
+                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x250';">
                     <div class="project-info">
                         <h4>Lead Tracking System</h4>
-                        <p>Organized prospect management for efficient follow-ups.</p>
+                        <p>Streamlined sales pipeline management.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x250?text=SMM+Project';">
+                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x250';">
                     <div class="project-info">
                         <h4>Content Strategy</h4>
-                        <p>Comprehensive 30-day social media planning.</p>
+                        <p>30-day scheduled growth plan.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project3.png" alt="The Voice I Silenced eBook" onerror="this.src='https://via.placeholder.com/400x250?text=The+Voice+I+Silenced';">
-                    <div class="project-info">
-                        <h4>The Voice I Silenced</h4>
-                        <p>Empowering eBooks and business resources.</p>
-                        <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn" style="width: 100%; margin-top: 10px;">Get the eBooks</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: var(--deep-teal); padding: 80px 0; text-align: center;">
-        <div class="container">
-            <h2>Let’s Build Something Great</h2>
-            <p>Ready to reclaim your time? Let's connect.</p>
-            <div style="margin-top: 30px;">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie, I need help with..." target="_blank" class="btn">Email Me Today</a>
-                <a href="portfolio.pdf" download class="btn btn-outline">View Portfolio (PDF)</a>
-            </div>
-            <p style="margin-top: 40px; font-size: 0.9rem; color: #64748b;">
-                © 2026 Ann Debbie Bedrijo | <a href="https://www.linkedin.com/in/anndebbiebedrijo" style="color: var(--accent-green); text-decoration: none;">LinkedIn</a>
-            </p>
-            <p style="font-size: 0.8rem; color: #475569;">https://debbieb05.github.io/</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleAccordion(btn) {
-            const content = btn.nextElementSibling;
-            const isOpen = content.style.display === "block";
-            document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
-            content.style.display = isOpen ? "none" : "block";
-        }
-    </script>
-</body>
-</html>
+                    <img src="images/project3.png" alt="The Voice I Sil
