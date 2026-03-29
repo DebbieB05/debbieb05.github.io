@@ -34,7 +34,7 @@
 
         h1, h2, h3 { margin: 0; line-height: 1.2; }
         h2 { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; color: var(--accent-green); }
-        p { color: var(--text-muted); margin-bottom: 1rem; }
+        p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1.05rem; }
 
         /* HERO SECTION */
         .hero {
@@ -88,14 +88,13 @@
 
         .btn-outline:hover { background: var(--accent-green); color: #000 !important; }
 
-        /* GRID LAYOUTS */
+        /* ACCORDIONS */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        /* ACCORDIONS */
         .accordion-item {
             background: var(--card-bg);
             border-radius: 12px;
@@ -138,7 +137,7 @@
 
         .project-card img {
             width: 100%;
-            height: 220px;
+            height: 250px; /* Increased height for eBook visibility */
             object-fit: cover;
             border-bottom: 3px solid var(--accent-green);
         }
@@ -159,16 +158,33 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="profile-wrapper">
-                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400';">
+                <img src="images/profile.jpg" alt="Ann Debbie Bedrijo" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Photo';">
             </div>
             <div>
                 <h3 style="color: var(--accent-green); font-weight: 400; letter-spacing: 1px;">VIRTUAL ASSISTANT & BOOKKEEPER</h3>
                 <h1 style="margin: 10px 0 20px 0;">Ann Debbie Bedrijo</h1>
-                <p>Helping business owners streamline operations and maintain flawless financial records so they can focus on growth.</p>
-                
-                <a href="mailto:debeebedrijo72@gmail.com?subject=Inquiry&body=Hi Debbie," class="btn">Email Me</a>
-                
+                <p>I help business owners stay organized, track finances, and manage daily operations with accuracy.</p>
+                <a href="mailto:debeebedrijo72@gmail.com" class="btn">Work With Me</a>
                 <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="background: #124b4c;">
+        <div class="container">
+            <h2>About Me</h2>
+            <div style="max-width: 800px; margin: auto;">
+                <p>I didn’t start as a virtual assistant. I started by managing real responsibilities. Handling finances, organizing records, and keeping day-to-day operations running without things falling apart.</p>
+                
+                <p>In a homeowners association, I handled bookkeeping. I tracked income and expenses and made sure records stayed accurate. In a yoga studio, I managed the front desk. Scheduling, client support, and daily admin tasks were part of my routine.</p>
+                
+                <p>That experience shaped how I work. I stay organized. I pay attention to details. I follow through. I don’t let tasks sit or get lost.</p>
+                
+                <p>Now I support business owners who need structure. If your inbox is piling up, your leads are not tracked, or your schedule feels messy, I step in and fix that.</p>
+                
+                <p style="margin-top:20px; color:var(--accent-green); font-weight: bold; text-align: center;">
+                    You focus on growing your business. I make sure everything behind the scenes runs smoothly.
+                </p>
             </div>
         </div>
     </section>
@@ -181,9 +197,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">QuickBooks Online</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Daily transaction recording</li>
-                            <li>Income/Expense tracking</li>
-                            <li>Clean financial reporting</li>
+                            <li>Record daily transactions</li>
+                            <li>Track income and expenses</li>
+                            <li>Maintain accurate financial records</li>
                         </ul>
                     </div>
                 </div>
@@ -191,9 +207,9 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Microsoft Excel</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Data cleaning & organization</li>
-                            <li>Advanced formula reporting</li>
-                            <li>Business tracking sheets</li>
+                            <li>Organize and clean data</li>
+                            <li>Create automated reports</li>
+                            <li>Track business information</li>
                         </ul>
                     </div>
                 </div>
@@ -201,19 +217,19 @@
                     <button class="accordion-trigger" onclick="toggleAccordion(this)">Data Entry</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Rapid, accurate input</li>
-                            <li>Consistency across files</li>
-                            <li>Database management</li>
+                            <li>Accurate data input</li>
+                            <li>Maintain organized records</li>
+                            <li>Ensure consistency across files</li>
                         </ul>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">Lead Generation</button>
+                    <button class="accordion-trigger" onclick="toggleAccordion(this)">Social Media Management</button>
                     <div class="accordion-content">
                         <ul>
-                            <li>Market & client research</li>
-                            <li>Verified lead list building</li>
-                            <li>CRM management</li>
+                            <li>Plan and schedule content</li>
+                            <li>Maintain consistent posting</li>
+                            <li>Support engagement tracking</li>
                         </ul>
                     </div>
                 </div>
@@ -221,49 +237,29 @@
         </div>
     </section>
 
-    <section id="experience" style="background: #124b4c;">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="grid-layout">
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">HOA Bookkeeper</button>
-                    <div class="accordion-content">
-                        <p>Managed finances for homeowners associations, ensuring accurate income tracking and professional record keeping.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-trigger" onclick="toggleAccordion(this)">Yoga Studio Admin</button>
-                    <div class="accordion-content">
-                        <p>Managed front-desk operations, handled client scheduling, and streamlined daily administrative workflows.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
+    <section id="projects" style="background: #124b4c;">
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="grid-layout">
                 <div class="project-card">
-                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x220';">
+                    <img src="images/project1.png" alt="Lead Tracking" onerror="this.src='https://via.placeholder.com/400x250?text=Project+1';">
                     <div class="project-info">
                         <h4>Lead Tracking System</h4>
-                        <p>Automated Excel system for sales progress.</p>
+                        <p>Streamlined sales pipeline management.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x220';">
+                    <img src="images/project2.png" alt="Content Plan" onerror="this.src='https://via.placeholder.com/400x250?text=Project+2';">
                     <div class="project-info">
                         <h4>Content Strategy</h4>
                         <p>30-day scheduled growth plan.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/project3.png" alt="TVIS eBook" onerror="this.src='https://via.placeholder.com/400x220?text=The+Voice+I+Silenced';">
+                    <img src="images/project3.png" alt="The Voice I Silenced" onerror="this.src='https://via.placeholder.com/400x250?text=eBook+Image+Not+Found';">
                     <div class="project-info">
                         <h4>The Voice I Silenced</h4>
-                        <p>Business tools and empowering eBooks.</p>
+                        <p>Empowering eBooks and business resources.</p>
                         <a href="https://thevoiceisilenced.gumroad.com/" target="_blank" class="btn" style="width: 100%; margin-top: 10px;">Get the eBooks</a>
                     </div>
                 </div>
@@ -271,17 +267,18 @@
         </div>
     </section>
 
-    <footer class="contact">
-        <div class="container" style="padding: 60px 0;">
-            <h2>Let's Get Started</h2>
+    <footer style="background: var(--deep-teal); padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2>Let’s Build Something Great</h2>
             <p>Ready to reclaim your time? Let's connect.</p>
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 30px;">
                 <a href="mailto:debeebedrijo72@gmail.com" class="btn">Email Me</a>
-                <a href="portfolio.pdf" download class="btn btn-outline">View Full Portfolio (PDF)</a>
+                <a href="portfolio.pdf" download class="btn btn-outline">View Portfolio (PDF)</a>
             </div>
-            <p style="margin-top: 30px; font-size: 0.9rem; color: #64748b;">
-                © 2026 Ann Debbie Bedrijo | <a href="https://www.linkedin.com/in/anndebbiebedrijo" style="color: var(--accent-green);">LinkedIn</a>
+            <p style="margin-top: 40px; font-size: 0.9rem; color: #64748b;">
+                © 2026 Ann Debbie Bedrijo | <a href="https://www.linkedin.com/in/anndebbiebedrijo" style="color: var(--accent-green); text-decoration: none;">LinkedIn</a>
             </p>
+            <p style="font-size: 0.8rem; color: #475569;">https://debbieb05.github.io/</p>
         </div>
     </footer>
 
