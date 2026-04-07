@@ -17,6 +17,10 @@
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { margin: 0; font-family: 'Lato', sans-serif; background: var(--white); color: var(--charcoal); line-height: 1.6; }
+        
+        /* Fix: Removing global underlines from accidental links */
+        a { text-decoration: none; color: inherit; }
+
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 
         /* NAV */
@@ -26,28 +30,26 @@
         /* HERO */
         .hero { background: var(--warm-beige); padding: 100px 5%; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: var(--midnight-teal); margin-bottom: 20px; }
-        .btn-primary { background: var(--midnight-teal); color: var(--white); padding: 16px 40px; text-decoration: none; font-weight: 700; border-radius: 4px; display: inline-block; transition: 0.3s; text-transform: uppercase; border: none; cursor: pointer; }
+        .btn-primary { background: var(--midnight-teal); color: var(--white) !important; padding: 16px 40px; font-weight: 700; border-radius: 4px; display: inline-block; transition: 0.3s; text-transform: uppercase; border: none; cursor: pointer; }
         .btn-primary:hover { background: var(--muted-gold); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; margin-top: 40px; }
-        .about-image { position: relative; }
         .about-image img { width: 100%; border-radius: 12px; box-shadow: 15px 15px 0px var(--midnight-teal); border: 1px solid #eee; background: white; }
         .sub-headline { color: var(--muted-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; display: block; margin-bottom: 10px; }
 
         /* SERVICES */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { padding: 40px; border-radius: 12px; border: 1px solid #eee; text-align: center; transition: 0.3s; background: white; }
+        .card { padding: 40px; border-radius: 12px; border: 1px solid #eee; text-align: center; background: white; }
         .card.premium { background: var(--warm-beige); border: 1.5px solid var(--muted-gold); }
         .card h3 { font-family: 'Playfair Display', serif; color: var(--midnight-teal); }
         .card ul { list-style: none; padding: 0; text-align: left; display: inline-block; }
-        .card li { margin: 8px 0; }
         .card li::before { content: '•'; color: var(--muted-gold); margin-right: 10px; font-weight: bold; }
 
-        /* PROJECT HIGHLIGHT */
+        /* PROJECT SECTION */
         .project-section { background: var(--light-gray); padding: 80px 0; margin-top: 80px; }
         .project-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; background: white; padding: 30px; border-radius: 15px; border: 1px solid #ddd; }
-        .project-card img { width: 100%; border-radius: 8px; border: 1px solid var(--muted-gold); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .project-card img { width: 100%; border-radius: 8px; border: 1px solid var(--muted-gold); }
 
         /* TOOLS EXPERTISE */
         .tools-section { background: var(--midnight-teal); color: white; padding: 60px 40px; border-radius: 20px; text-align: center; margin-top: 60px; }
@@ -56,7 +58,7 @@
         .tool-icon-box img { width: 35px; height: 35px; filter: brightness(0) invert(1); opacity: 0.8; transition: 0.3s; }
         .tool-item:hover .tool-icon-box { background: rgba(197, 160, 89, 0.2); border-color: var(--muted-gold); }
         .tool-item:hover img { filter: none; opacity: 1; }
-        .tool-item span { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
+        .tool-item span { font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
 
         /* FOOTER */
         footer { text-align: center; padding: 80px 20px; border-top: 1px solid #eee; }
@@ -75,20 +77,20 @@
     <header class="hero">
         <span class="sub-headline">Operations & Bookkeeping Specialist</span>
         <h1>Strategic Order for Visionary Entrepreneurs.</h1>
-        <p>I build the digital architecture and reconcile the books so you can lead with absolute clarity. Precision, systems, and growth—all in one place.</p>
+        <p>I build the digital architecture and reconcile the books so you can lead with absolute clarity.</p>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie..." target="_blank" class="btn-primary">Secure Your Growth</a>
     </header>
 
     <div class="container">
         <section class="about-grid">
             <div class="about-image">
-                <img src="https://via.placeholder.com/600x700/F9F7F2/004D4D?text=DEBBIE+PROFILE" alt="Ann Debbie Bedrijo">
+                <img src="https://i.ibb.co/6R0D9yY/debbie-profile.png" alt="Ann Debbie Bedrijo" onerror="this.src='https://via.placeholder.com/600x700/F9F7F2/004D4D?text=Debbie+Profile'">
             </div>
             <div class="about-content">
                 <span class="sub-headline">The Silent Partner</span>
                 <h2 style="font-family: 'Playfair Display'; color: var(--midnight-teal); font-size: 2.2rem;">Architect of Efficiency.</h2>
-                <p>I am more than a task-taker; I am a builder of digital ecosystems. With deep mastery of **Notion Architecture** and a focus on **Financial Integrity**, I help businesses scale without operational friction.</p>
-                <p>My approach is rooted in disciplined systems and creative clarity. Whether I’m reconciling audit-ready books or developing instructional guides and children’s literature, I act as your 'Silent Partner'—managing the infrastructure so you can focus on the big picture.</p>
+                <p>I am more than a task-taker; I am a builder of digital ecosystems. With deep mastery of <strong>Notion Architecture</strong> and a focus on <strong>Financial Integrity</strong>, I help businesses scale without operational friction.</p>
+                <p>My approach is rooted in disciplined systems and creative clarity. Whether I’m reconciling audit-ready books or developing instructional guides, I act as your 'Silent Partner'—managing the infrastructure so you can focus on the big picture.</p>
             </div>
         </section>
 
@@ -127,11 +129,11 @@
                 </div>
                 <div class="project-info">
                     <h3 style="font-family: 'Playfair Display'; color: var(--midnight-teal); font-size: 1.8rem;">Financial Dashboard</h3>
-                    <p>Designed a custom financial ecosystem for an AgTech startup. By integrating QuickBooks data with a Notion dashboard, I provided the CEO with a real-time view of profitability and burn rate.</p>
-                    <ul class="card ul" style="margin-top: 10px; border:none; padding:0;">
-                        <li>Real-time P&L Visualization</li>
-                        <li>Automated Data Syncing</li>
-                        <li>Process Documentation</li>
+                    <p>Designed a custom financial ecosystem for an AgTech startup. By integrating QuickBooks data with a Notion dashboard, I provided the CEO with a real-time view of profitability.</p>
+                    <ul style="padding:0; list-style:none;">
+                        <li>• Real-time P&L Visualization</li>
+                        <li>• Automated Data Syncing</li>
+                        <li>• Process Documentation</li>
                     </ul>
                 </div>
             </div>
@@ -155,9 +157,9 @@
     <footer>
         <div class="logo" style="font-size: 2rem;">Ann Debbie Bedrijo</div>
         <p>Virtual Assistant & Bookkeeper | Strategic Operations Partner</p>
-        <p style="margin-top: 30px;">
+        <div style="margin-top: 30px;">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Inquiry&body=Hi Debbie..." target="_blank" class="btn-primary">Start a Partnership</a>
-        </p>
+        </div>
         <p style="font-size: 0.8rem; color: #999; margin-top: 40px;">&copy; 2026. Built for Excellence.</p>
     </footer>
 
