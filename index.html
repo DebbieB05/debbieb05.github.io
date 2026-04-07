@@ -6,60 +6,83 @@
 <title>Debbie | Virtual Assistant</title>
 
 <style>
+:root {
+  --primary: #6C63FF;
+  --accent: #F4F5FF;
+  --text: #222;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f8f9fb;
-  color: #333;
+  background: var(--accent);
+  color: var(--text);
 }
 
 header {
-  background: #111;
+  background: var(--primary);
   color: #fff;
-  padding: 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-h2 {
+header h1 {
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  margin-top: 10px;
+header p {
+  font-size: 18px;
+  opacity: 0.95;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 15px;
-  background: #111;
-  color: #fff;
+  margin-top: 15px;
+  padding: 12px 18px;
+  background: #fff;
+  color: var(--primary);
   text-decoration: none;
   border-radius: 8px;
-  margin-top: 10px;
+  font-weight: bold;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border-left: 5px solid var(--primary);
+}
+
+img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: #666;
 }
 </style>
 
@@ -67,85 +90,93 @@ img {
 
 <body>
 
+<!-- HERO -->
 <header>
-  <h1>Debbie | Virtual Assistant</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#case-study">Case Study</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <h1>Inbox, Calendar, and Financial Support for Busy Business Owners</h1>
+  <p>I organize your operations so you stay in control and stop missing details.</p>
+
+  <a class="button" href="mailto:your@email.com">Work With Me</a>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
+<!-- SERVICES -->
+<section>
+  <h2>How I Help You</h2>
+
   <div class="card">
-    <p>
-      I help business owners stay organized, manage emails, track data, and maintain clear systems.
-      You get structured support, consistent execution, and reliable results.
-    </p>
+    <ul>
+      <li>Email and inbox organization</li>
+      <li>Calendar scheduling and coordination</li>
+      <li>Financial tracking and reporting</li>
+      <li>File and data organization</li>
+    </ul>
   </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+<!-- PROJECT -->
+<section>
+  <h2>Featured Work</h2>
 
   <div class="card">
-    <h3>Financial Dashboard</h3>
-    <p>Clean system for tracking income, expenses, and reports.</p>
+    <h3>Financial Dashboard System</h3>
+    <p>Structured system for tracking income, expenses, and reports.</p>
+
     <img src="images/dashboard.jpg" alt="Financial Dashboard">
+
+    <p><strong>Sample dashboard I created for financial tracking.</strong></p>
+
+    <a class="button" href="portfolio.pdf" target="_blank">View Full Portfolio</a>
   </div>
-
-  <div class="card">
-    <h3>Portfolio & Resume</h3>
-    <p>View my full work and experience.</p>
-
-    <a class="button" href="portfolio.pdf" target="_blank">View Portfolio</a><br>
-    <a class="button" href="resume.pdf" target="_blank">View Resume</a>
-  </div>
-
 </section>
 
-<section id="case-study">
+<!-- CASE STUDY -->
+<section>
   <h2>Case Study</h2>
 
   <div class="card">
     <h3>Financial Organization for Homeowners Association</h3>
 
-    <p><strong>Problem:</strong> Disorganized records, unclear tracking, delayed reports.</p>
+    <p><strong>Problem</strong><br>
+    Disorganized records. Delayed reporting. No clear tracking system.</p>
 
-    <p><strong>Action:</strong></p>
+    <p><strong>Action</strong></p>
     <ul>
       <li>Organized financial data into one system</li>
       <li>Built income and expense tracker</li>
-      <li>Created monthly reporting format</li>
+      <li>Created monthly reporting workflow</li>
     </ul>
 
-    <p><strong>Result:</strong></p>
+    <p><strong>Result</strong></p>
     <ul>
       <li>Faster tracking of dues</li>
       <li>Clear monthly reports</li>
       <li>Reduced errors</li>
     </ul>
 
-    <img src="images/dashboard.jpg" alt="Case Study Dashboard">
   </div>
-
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
+<!-- CONTACT -->
+<section>
+  <h2>Work With Me</h2>
 
   <div class="card">
-    <p>Email me directly:</p>
+    <p>Ready to get your business organized?</p>
 
     <a class="button" href="mailto:your@email.com">
       Send Email
     </a>
 
-  </div>
+    <br><br>
 
+    <a class="button" href="resume.pdf" target="_blank">
+      View Resume
+    </a>
+  </div>
 </section>
+
+<footer>
+  © 2026 Debbie | Virtual Assistant
+</footer>
 
 </body>
 </html>
