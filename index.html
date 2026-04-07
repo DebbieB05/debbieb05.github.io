@@ -147,12 +147,43 @@
         /* FOOTER */
         footer { text-align: center; padding: 100px 0; background: var(--white); border-top: 1px solid #eee; }
 
-        /* RESPONSIVE FIXES */
-        @media (max-width: 900px) {
-            .about-flex, .work-card { flex-direction: column; }
-            .work-img { min-height: 300px; }
-            .work-content { padding: 40px 25px; }
-            .about-img-container { margin-bottom: 40px; }
+        /* GLOBAL RESPONSIVE DEFAULTS */
+img {
+    max-width: 100%; /* Prevents images from being wider than the screen */
+    height: auto;
+    display: block;
+}
+
+/* MOBILE-SPECIFIC ADJUSTMENTS (For screens smaller than 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Adds breathing room on sides */
+        width: 100%;
+    }
+
+    .work-card {
+        flex-direction: column !important; /* Stacks image and text vertically */
+        gap: 20px;
+    }
+
+    .work-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .work-content {
+        padding: 30px 20px !important; /* Reduces padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 2.2rem !important; /* Scales down large headings */
+    }
+
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+}
         }
     </style>
 </head>
@@ -269,78 +300,75 @@
             <span class="hero-label">Featured Case Study</span>
             <h2>Executive Operations Hub</h2>
         </div>
+
         
-        <section class="work container" id="portfolio" style="padding: 100px 0;">
+       <section id="portfolio" class="container" style="padding: 100px 0;">
     <div style="text-align: center; margin-bottom: 80px;">
-        <span class="hero-label">Case Studies & Systems</span>
-        <h2 style="font-size: 3rem; margin: 10px 0;">Executive Operations Hub</h2>
-        <p style="color: #666; max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
-            A deep dive into the digital architecture and financial systems I've built for high-growth ventures.
-        </p>
+        <span class="hero-label" style="color: var(--muted-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Case Studies</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--midnight-teal); margin-top: 10px;">Executive Operations Hub</h2>
+        <p style="color: #666; max-width: 600px; margin: 15px auto;">Strategic digital architecture and financial systems designed for high-growth ventures.</p>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 100px;">
+    <div style="display: flex; flex-direction: column; gap: 80px;">
 
-        <div class="work-card" style="display: flex; align-items: stretch; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden;">
-            <div class="work-img" style="flex: 1.4; position: relative; background: #000;">
-                <img src="https://i.ibb.co/LnxY5tW/Notion2.jpg" alt="Notion Global Expansion Hub" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 77, 77, 0.95); color: #fff; padding: 15px; font-size: 0.85rem; font-style: italic; text-align: center;">
-                    "The Digital Brain: Systematizing North American market entry for AgTech."
+        <div class="work-card" style="display: flex; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden; flex-wrap: wrap;">
+            <div class="work-img" style="flex: 1.2; min-width: 300px; position: relative; background: #f4f4f4;">
+                <img src="https://i.ibb.co/LnxY5tW/Notion2.jpg" alt="Notion Expansion Hub" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0, 77, 77, 0.9); color: white; padding: 15px; font-size: 0.85rem; text-align: center; font-style: italic;">
+                    "Systematizing North American market entry for AgTech ventures."
                 </div>
             </div>
-            <div class="work-content" style="flex: 1; padding: 60px;">
-                <span class="hero-label" style="font-size: 0.7rem; color: #C5A059;">Systems Architecture</span>
-                <h3 style="font-size: 2.2rem; color: #004D4D; margin: 10px 0;">Global Expansion Hub</h3>
-                <p style="color: #555; margin-bottom: 25px;">
-                    For <strong>Platypus Vision</strong>, I designed a high-level operational "Command Center" in Notion. This wasn't just a database; it was a strategic roadmap for international growth.
+            <div class="work-content" style="flex: 1; padding: 50px; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <span class="hero-label" style="font-size: 0.7rem; color: var(--muted-gold);">Systems Architecture</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 2rem; color: var(--midnight-teal); margin: 10px 0;">Global Expansion Hub</h3>
+                <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">
+                    Developed for **Platypus Vision**, this Notion ecosystem serves as the central "brain" for international market entry, integrating roadmap tracking, market intelligence, and asset management.
                 </p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 12px;"><strong>• Market Intelligence Engine:</strong> Centralized competitor data and regional grant tracking.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Digital Asset Manager:</strong> Unified brand library for global marketing teams.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Strategic Roadmap:</strong> Integrated timelines for North American market scaling.</li>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem; color: #666;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> Market Intelligence Engine</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> Roadmap & Grant Tracker</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> Centralized Asset Vault</li>
                 </ul>
             </div>
         </div>
 
-        <div class="work-card" style="display: flex; flex-direction: row-reverse; align-items: stretch; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden;">
-            <div class="work-img" style="flex: 1.4; position: relative; background: #f9f7f2;">
-                <img src="https://i.ibb.co/hR8h7Yy/workspace-flatlay.jpg" alt="Financial Ecosystem Workspace" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 77, 77, 0.95); color: #fff; padding: 15px; font-size: 0.85rem; font-style: italic; text-align: center;">
-                    "Financial Integrity: Bridging the gap between raw data and CEO clarity."
+        <div class="work-card" style="display: flex; flex-direction: row-reverse; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden; flex-wrap: wrap;">
+            <div class="work-img" style="flex: 1.2; min-width: 300px; position: relative; background: #f4f4f4;">
+                <img src="https://i.ibb.co/hR8h7Yy/workspace-flatlay.jpg" alt="Financial Dashboard" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0, 77, 77, 0.9); color: white; padding: 15px; font-size: 0.85rem; text-align: center; font-style: italic;">
+                    "Transforming raw data into audit-ready executive clarity."
                 </div>
             </div>
-            <div class="work-content" style="flex: 1; padding: 60px;">
-                <span class="hero-label" style="font-size: 0.7rem; color: #C5A059;">Strategic Bookkeeping</span>
-                <h3 style="font-size: 2.2rem; color: #004D4D; margin: 10px 0;">Financial Ecosystem</h3>
-                <p style="color: #555; margin-bottom: 25px;">
-                    A custom-built financial oversight system that integrates <strong>QuickBooks</strong> with Notion dashboards. I provided the CEO with a real-time "Flight Radar" for their business.
+            <div class="work-content" style="flex: 1; padding: 50px; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <span class="hero-label" style="font-size: 0.7rem; color: var(--muted-gold);">Strategic Bookkeeping</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 2rem; color: var(--midnight-teal); margin: 10px 0;">Financial Ecosystem</h3>
+                <p style="color: #555; margin-bottom: 20px; line-height: 1.6;">
+                    I engineered a custom financial oversight system by integrating **QuickBooks** with Notion dashboards. This provided the CEO with a real-time view of profitability and burn rate.
                 </p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 12px;"><strong>• P&L Visualization:</strong> Moving away from static reports to dynamic, visual profit tracking.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Automated Burn Rate:</strong> Real-time oversight of cash runway and operational spend.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Audit-Ready SOPs:</strong> Documented bookkeeping workflows for seamless scaling.</li>
+                <ul style="list-style: none; padding: 0; font-size: 0.95rem; color: #666;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> P&L Visualization & Real-time Charts</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> Automated Data Syncing & Categorization</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--muted-gold); margin-right: 10px;">•</span> Audit-Ready SOPs for Scaling</li>
                 </ul>
             </div>
         </div>
 
-        <div class="work-card" style="display: flex; align-items: stretch; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden;">
-            <div class="work-img" style="flex: 1.4; position: relative; background: linear-gradient(135deg, #F9F7F2 0%, #e8e4db 100%); display: flex; justify-content: center; align-items: center; padding: 50px;">
-                <img src="https://i.ibb.co/xL7y7Dk/project3.jpg" alt="Whispers of Strength Ebook" style="width: auto; max-height: 450px; border-radius: 5px; box-shadow: 20px 20px 50px rgba(0,0,0,0.15);">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 77, 77, 0.95); color: #fff; padding: 15px; font-size: 0.85rem; font-style: italic; text-align: center;">
-                    "Creative Direction: A fusion of healing narratives and structured design."
+        <div class="work-card" style="display: flex; background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden; flex-wrap: wrap;">
+            <div class="work-img" style="flex: 1.2; min-width: 300px; position: relative; background: linear-gradient(135deg, #F9F7F2 0%, #e8e4db 100%); display: flex; align-items: center; justify-content: center; padding: 40px;">
+                <img src="https://i.ibb.co/xL7y7Dk/project3.jpg" alt="The Voice I Silenced Ebook" style="width: auto; max-height: 380px; box-shadow: 15px 15px 35px rgba(0,0,0,0.15); border-radius: 4px;">
+                <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0, 77, 77, 0.9); color: white; padding: 15px; font-size: 0.85rem; text-align: center; font-style: italic;">
+                    "Creative Direction: Empowerment through storytelling."
                 </div>
             </div>
-            <div class="work-content" style="flex: 1; padding: 60px;">
-                <span class="hero-label" style="font-size: 0.7rem; color: #C5A059;">Creative & Publication</span>
-                <h3 style="font-size: 2.2rem; color: #004D4D; margin: 10px 0;">Whispers of Strength</h3>
-                <p style="color: #555; margin-bottom: 25px;">
-                    This signature project represents my ability to lead a publication from core concept to digital launch. It proves that my operational mind is balanced by deep creativity.
+            <div class="work-content" style="flex: 1; padding: 50px; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <span class="hero-label" style="font-size: 0.7rem; color: var(--muted-gold);">Digital Publication</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 2rem; color: var(--midnight-teal); margin: 10px 0;">The Voice I Silenced</h3>
+                <p style="color: #555; margin-bottom: 25px; line-height: 1.6;">
+                    A signature project representing a complete creative lifecycle—from narrative design to final publication. This ebook demonstrates my ability to lead high-level branding and distribution strategies.
                 </p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 12px;"><strong>• Content Strategy:</strong> Designing a 20-day daily empowerment framework.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Publication Design:</strong> Full layout and visual branding for digital distribution.</li>
-                    <li style="margin-bottom: 12px;"><strong>• Project Lifecycle:</strong> Managed authorship, editing, and final technical delivery.</li>
-                </ul>
+                <a href="https://thevoiceisilenced.gumroad.com/l/thevoiceisilenced" target="_blank" style="display: inline-block; background: var(--midnight-teal); color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 700; text-align: center; transition: 0.3s; width: fit-content;">
+                    View on Gumroad
+                </a>
             </div>
         </div>
 
