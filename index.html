@@ -15,7 +15,7 @@
             --light-gray: #f4f4f4;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -29,7 +29,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         /* --- NAVIGATION --- */
@@ -51,18 +51,19 @@
             color: var(--midnight-teal);
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: bold;
         }
 
         /* --- HERO SECTION --- */
         .hero {
             background-color: var(--warm-beige);
-            padding: 100px 5% 80px;
+            padding: 120px 5% 100px;
             text-align: center;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             color: var(--midnight-teal);
             margin-bottom: 20px;
             line-height: 1.1;
@@ -71,119 +72,108 @@
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 35px;
             color: #555;
         }
 
         .btn-primary {
             background-color: var(--midnight-teal);
             color: var(--white);
-            padding: 15px 35px;
+            padding: 18px 45px;
             text-decoration: none;
             font-weight: 700;
             border-radius: 4px;
             display: inline-block;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .btn-primary:hover {
             background-color: var(--muted-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* --- SECTION HEADERS --- */
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
+        /* --- ABOUT ME SECTION --- */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--midnight-teal);
-            margin-bottom: 10px;
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 20px 20px 0px var(--warm-beige);
+            border: 1px solid #eee;
         }
 
-        .sub-headline {
-            color: var(--muted-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+        .about-content h2 { text-align: left; margin-top: 0; }
+        .sub-headline { color: var(--muted-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-section {
+            background: var(--light-gray);
+            padding: 100px 0;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .project-img-container img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--muted-gold);
         }
 
         /* --- SERVICES GRID --- */
-        .grid {
+        .section-header { text-align: center; margin-bottom: 60px; }
+        
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: var(--white);
-            padding: 40px;
+            padding: 45px 30px;
             border-radius: 12px;
-            border: 1px solid #eee;
+            border: 1px solid #f0f0f0;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,77,77,0.08);
-        }
+        .card.premium { background-color: var(--warm-beige); border: 1px solid var(--muted-gold); }
+        .card h3 { font-family: 'Playfair Display', serif; color: var(--midnight-teal); margin-bottom: 15px; }
+        .card ul { list-style: none; padding: 0; text-align: left; display: inline-block; }
+        .card li { margin: 12px 0; display: flex; align-items: center; font-size: 0.95rem; }
+        .card li::before { content: '•'; color: var(--muted-gold); font-weight: bold; margin-right: 10px; font-size: 1.5rem; }
 
-        .card.premium {
-            background-color: var(--warm-beige);
-            border: 1.5px solid var(--muted-gold);
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--midnight-teal);
-            font-size: 1.6rem;
-        }
-
-        .card ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .card li {
-            margin: 12px 0;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .card li::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--muted-gold);
-            display: inline-block;
-            margin-right: 12px;
-            border-radius: 50%;
-        }
-
-        /* --- TOOLS SECTION --- */
+        /* --- TOOLS & EXPERTISE (ENHANCED) --- */
         .tools-section {
             background-color: var(--midnight-teal);
-            color: var(--white);
-            padding: 80px 5%;
-            border-radius: 24px;
+            padding: 80px 40px;
+            border-radius: 25px;
             text-align: center;
+            color: var(--white);
         }
-
-        .tools-section h2 { color: var(--white); }
 
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 40px;
+            gap: 30px;
             margin-top: 50px;
         }
 
@@ -191,153 +181,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            opacity: 0.9;
+            transition: 0.3s;
         }
 
-        .tool-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
+        .tool-icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
-            border: 1px solid var(--muted-gold);
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--muted-gold);
+            transition: 0.3s;
         }
 
-        .tool-item span {
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+        .tool-icon-box img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Makes logos white */
+            opacity: 0.7;
+            transition: 0.3s;
         }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--white);
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .footer-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--midnight-teal);
-            margin-bottom: 10px;
-        }
-
-        /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero { padding: 60px 5%; }
-            h2 { font-size: 1.8rem; }
-            .tools-grid { grid-template-columns: repeat(2, 1fr); }
-            .card { padding: 30px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">Ann Debbie Bedrijo</div>
-        <div>Expertise • Systems • Order</div>
-    </nav>
-
-    <section class="hero">
-        <h1>Strategic Order for Visionary Entrepreneurs.</h1>
-        <p>Precision bookkeeping meets high-level executive support. I manage the systems and the scales so you can focus on the big picture.</p>
-        <a href="#contact" class="btn-primary">Secure Your Growth</a>
-    </section>
-
-    <div class="container">
-        <div class="section-header">
-            <h2>How I Support Your Business</h2>
-            <p class="sub-headline">Clear Support • Structured Systems • Execution</p>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Inbox & Email</h3>
-                <p>Master your communication flow and never miss a vital connection.</p>
-                <ul>
-                    <li>Inbox organization</li>
-                    <li>Priority filtering</li>
-                    <li>Follow-up tracking</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Calendar & Scheduling</h3>
-                <p>Complete control over your time with zero double-bookings.</p>
-                <ul>
-                    <li>Meeting coordination</li>
-                    <li>Time-block planning</li>
-                    <li>Automated reminders</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Lead Tracking</h3>
-                <p>Turning contacts into clients with consistent follow-up systems.</p>
-                <ul>
-                    <li>CRM Management</li>
-                    <li>Status tracking</li>
-                    <li>Lead nurturing</li>
-                </ul>
-            </div>
-
-            <div class="card premium">
-                <h3>Bookkeeping</h3>
-                <p>Clean, audit-ready books for ultimate financial transparency.</p>
-                <ul>
-                    <li>Expense tracking</li>
-                    <li>Monthly reconciliation</li>
-                    <li>Financial snapshots</li>
-                </ul>
-            </div>
-        </div>
-
-        <section class="tools-section">
-            <h2>Tools & Expertise</h2>
-            <p style="color: var(--muted-gold); font-weight: bold; letter-spacing: 1px;">THE ARCHITECTURE BEHIND THE OPERATIONS</p>
-            
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <div class="tool-icon">N</div>
-                    <span>Notion</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">Q</div>
-                    <span>QuickBooks</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">C</div>
-                    <span>Canva</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">A</div>
-                    <span>Asana</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">G</div>
-                    <span>Google Workspace</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">S</div>
-                    <span>Slack</span>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-name">Ann Debbie Bedrijo</div>
-        <p>Virtual Assistant & Bookkeeper | Strategic Operations Partner</p>
-        <p style="font-size: 0.8rem; color: #999; margin-top: 20px;">&copy; 2026 Professional Brand. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
