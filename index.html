@@ -1,182 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Debbie | Virtual Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ann Debbie Bedrijo | Strategic VA & Bookkeeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-teal: #004D4D;
+            --muted-gold: #C5A059;
+            --warm-beige: #F9F7F2;
+            --charcoal: #333333;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+        }
 
-<style>
-:root {
-  --primary: #6C63FF;
-  --accent: #F4F5FF;
-  --text: #222;
-}
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: var(--accent);
-  color: var(--text);
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--white);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
 
-header {
-  background: var(--primary);
-  color: #fff;
-  padding: 60px 20px;
-  text-align: center;
-}
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
 
-header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header p {
-  font-size: 18px;
-  opacity: 0.95;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--midnight-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
 
-.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 18px;
-  background: #fff;
-  color: var(--primary);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            background-color: var(--warm-beige);
+            padding: 120px 5% 100px;
+            text-align: center;
+        }
 
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 50px 20px;
-}
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            color: var(--midnight-teal);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
 
-h2 {
-  margin-bottom: 15px;
-  color: var(--primary);
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            color: #555;
+        }
 
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  border-left: 5px solid var(--primary);
-}
+        .btn-primary {
+            background-color: var(--midnight-teal);
+            color: var(--white);
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
 
-img {
-  width: 100%;
-  max-width: 650px;
-  border-radius: 12px;
-  margin-top: 15px;
-}
+        .btn-primary:hover {
+            background-color: var(--muted-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-ul {
-  padding-left: 20px;
-}
+        /* --- ABOUT ME SECTION --- */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
 
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  color: #666;
-}
-</style>
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 20px 20px 0px var(--warm-beige);
+            border: 1px solid #eee;
+        }
 
+        .about-content h2 { text-align: left; margin-top: 0; }
+        .sub-headline { color: var(--muted-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-section {
+            background: var(--light-gray);
+            padding: 100px 0;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+        }
+
+        .project-img-container img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--muted-gold);
+        }
+
+        /* --- SERVICES GRID --- */
+        .section-header { text-align: center; margin-bottom: 60px; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 45px 30px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .card.premium { background-color: var(--warm-beige); border: 1px solid var(--muted-gold); }
+        .card h3 { font-family: 'Playfair Display', serif; color: var(--midnight-teal); margin-bottom: 15px; }
+        .card ul { list-style: none; padding: 0; text-align: left; display: inline-block; }
+        .card li { margin: 12px 0; display: flex; align-items: center; font-size: 0.95rem; }
+        .card li::before { content: '•'; color: var(--muted-gold); font-weight: bold; margin-right: 10px; font-size: 1.5rem; }
+
+        /* --- TOOLS & EXPERTISE (ENHANCED) --- */
+        .tools-section {
+            background-color: var(--midnight-teal);
+            padding: 80px 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .tool-icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .tool-icon-box img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Makes logos white */
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .tool-item:hover .tool-icon-box {
+            background: rgba(197, 160, 89, 0.15);
+            border-color: var(--muted-gold);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+        }
+
+        .tool-item:hover img {
+            filter: none; /* Shows original colors on hover */
+            opacity: 1;
+        }
+
+        .tool-item span { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: bold; color: rgba(255,255,255,0.7); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 100px 20px; background: var(--white); border-top: 1px solid #eee; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--midnight-teal); margin-bottom: 10px; }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .about-section, .project-card { grid-template-columns: 1fr; text-align: center; }
+            .about-content h2 { text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .tools-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<header>
-  <h1>Inbox, Calendar, and Financial Support for Busy Business Owners</h1>
-  <p>I organize your operations so you stay in control and stop missing details.</p>
+    <nav>
+        <div class="logo">Ann Debbie Bedrijo</div>
+        <div style="font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; color: var(--muted-gold);">STRATEGIC PARTNER</div>
+    </nav>
 
-  <a class="button" href="mailto:your@email.com">Work With Me</a>
-</header>
+    <section class="hero">
+        <span class="sub-headline">Operations & Finance Specialist</span>
+        <h1>Strategic Order for Visionary Entrepreneurs.</h1>
+        <p>Precision bookkeeping meets high-level executive support. I manage the digital architecture so you can lead with absolute clarity.</p>
+        <a href="mailto:ann.bedrijo@example.com?subject=Strategic Inquiry" class="btn-primary">Secure Your Growth</a>
+    </section>
 
-<!-- SERVICES -->
-<section>
-  <h2>How I Help You</h2>
+    <div class="container about-section">
+        <div class="about-image">
+            <img src="https://via.placeholder.com/500x600" alt="Ann Debbie Bedrijo">
+        </div>
+        <div class="about-content">
+            <span class="sub-headline">The Silent Partner</span>
+            <h2>More Than a VA. An Architect of Efficiency.</h2>
+            <p>I specialize in building the systems that allow businesses to scale without the chaos. By combining the precision of a bookkeeper with the strategic mindset of an operations partner, I help CEOs reclaim 20+ hours a month.</p>
+            <p>Whether it's designing custom Notion portals or ensuring your books are audit-ready, I bring a high-performance standard to every workflow.</p>
+            <a href="mailto:ann.bedrijo@example.com" style="color: var(--midnight-teal); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--muted-gold);">Get in touch &rarr;</a>
+        </div>
+    </div>
 
-  <div class="card">
-    <ul>
-      <li>Email and inbox organization</li>
-      <li>Calendar scheduling and coordination</li>
-      <li>Financial tracking and reporting</li>
-      <li>File and data organization</li>
-    </ul>
-  </div>
-</section>
+    <div class="container">
+        <div class="section-header">
+            <span class="sub-headline">How I Support Your Business</span>
+            <h2>Strategic Execution</h2>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Inbox & Email</h3>
+                <p>Prioritized communication and proactive management to ensure no opportunity is missed.</p>
+                <ul>
+                    <li>Inbox Organization</li>
+                    <li>Priority Filtering</li>
+                    <li>Follow-up Tracking</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Lead Tracking</h3>
+                <p>Clean CRM systems and lead nurturing workflows that turn prospects into clients.</p>
+                <ul>
+                    <li>CRM Management</li>
+                    <li>Status Tracking</li>
+                    <li>Pipeline Cleanup</li>
+                </ul>
+            </div>
+            <div class="card premium">
+                <h3>Bookkeeping</h3>
+                <p>High-integrity financial oversight for peace of mind and data-driven decisions.</p>
+                <ul>
+                    <li>Expense Categorization</li>
+                    <li>Monthly Reconciliation</li>
+                    <li>Financial Reporting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<!-- PROJECT -->
-<section>
-  <h2>Featured Work</h2>
+    <div class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-headline">Case Study</span>
+                <h2>Financial Operations Hub</h2>
+            </div>
+            <div class="project-card">
+                <div class="project-img-container">
+                    <img src="https://i.ibb.co/hR8h7Yy/workspace-flatlay.jpg" alt="Financial Dashboard Project">
+                </div>
+                <div class="project-info">
+                    <h3 style="font-family: 'Playfair Display'; color: var(--midnight-teal); font-size: 1.8rem;">Executive Dashboard</h3>
+                    <p>Designed a custom financial ecosystem for an AgTech startup. By integrating QuickBooks data with a Notion dashboard, I provided the CEO with a real-time view of profitability and burn rate.</p>
+                    <ul class="card ul" style="margin-top: 10px;">
+                        <li>Real-time P&L Visualization</li>
+                        <li>Automated Data Syncing</li>
+                        <li>Standard Operating Procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="card">
-    <h3>Financial Dashboard System</h3>
-    <p>Structured system for tracking income, expenses, and reports.</p>
+    <div class="container">
+        <section class="tools-section">
+            <h2 style="color: white;">Tools & Expertise</h2>
+            <p style="color: var(--muted-gold); font-weight: bold; letter-spacing: 1px;">THE ARCHITECTURE BEHIND THE OPERATIONS</p>
+            
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion"></div>
+                    <span>Notion</span>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://quickbooks.intuit.com/oidam/intuit/sbseg/en_us/quickbooks/logos/qbo_icon_200x200.png" alt="Quickbooks"></div>
+                    <span>QuickBooks</span>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://static.canva.com/static/images/canva_logo_gradient.png" alt="Canva"></div>
+                    <span>Canva</span>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg" alt="Asana"></div>
+                    <span>Asana</span>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Workspace_logo.svg" alt="Google"></div>
+                    <span>Workspace</span>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack"></div>
+                    <span>Slack</span>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <img src="images/dashboard.jpg" alt="Financial Dashboard">
-
-    <p><strong>Sample dashboard I created for financial tracking.</strong></p>
-
-    <a class="button" href="portfolio.pdf" target="_blank">View Full Portfolio</a>
-  </div>
-</section>
-
-<!-- CASE STUDY -->
-<section>
-  <h2>Case Study</h2>
-
-  <div class="card">
-    <h3>Financial Organization for Homeowners Association</h3>
-
-    <p><strong>Problem</strong><br>
-    Disorganized records. Delayed reporting. No clear tracking system.</p>
-
-    <p><strong>Action</strong></p>
-    <ul>
-      <li>Organized financial data into one system</li>
-      <li>Built income and expense tracker</li>
-      <li>Created monthly reporting workflow</li>
-    </ul>
-
-    <p><strong>Result</strong></p>
-    <ul>
-      <li>Faster tracking of dues</li>
-      <li>Clear monthly reports</li>
-      <li>Reduced errors</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section>
-  <h2>Work With Me</h2>
-
-  <div class="card">
-    <p>Ready to get your business organized?</p>
-
-    <a class="button" href="mailto:your@email.com">
-      Send Email
-    </a>
-
-    <br><br>
-
-    <a class="button" href="resume.pdf" target="_blank">
-      View Resume
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Debbie | Virtual Assistant
-</footer>
+    <footer>
+        <div class="footer-logo">Ann Debbie Bedrijo</div>
+        <p>Virtual Assistant & Bookkeeper | Strategic Operations Partner</p>
+        <div style="margin: 40px 0;">
+            <a href="mailto:ann.bedrijo@example.com" class="btn-primary">Start a Partnership</a>
+        </div>
+        <p style="font-size: 0.8rem; color: #999;">&copy; 2026. All Rights Reserved. <br> Built for Performance & Growth.</p>
+    </footer>
 
 </body>
 </html>
