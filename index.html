@@ -94,103 +94,93 @@
         }
 
 }/* Container Polish */
-.services {
-  text-align: center;
-  margin-top: 100px;
-  padding: 60px 20px;
-  background: radial-gradient(circle at top, rgba(34, 197, 94, 0.05), transparent);
-}
+<style>
+    .services-container {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        line-height: 1.6;
+    }
 
-.services-sub {
-  color: #94a3b8;
-  margin-bottom: 50px;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
+    .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
 
-/* Grid & Card Refinement */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    .section-header h2 {
+        font-size: 2.5rem;
+        color: #004d4d; /* Midnight Teal */
+        margin-bottom: 10px;
+    }
 
-.service-card {
-  background: rgba(15, 23, 42, 0.8);
-  padding: 40px 30px;
-  border-radius: 16px;
-  text-align: left;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
-}
+    .section-header p {
+        font-size: 1.1rem;
+        color: #8c7b60; /* Muted Gold/Bronze */
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  border-color: #22c55e;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
 
-.service-card h3 {
-  color: #22c55e;
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-}
+    .service-card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
 
-.service-card p {
-  font-size: 15px;
-  color: #cbd5e1;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
 
-.service-card ul {
-  padding-left: 0;
-  list-style: none;
-  color: #94a3b8;
-  font-size: 14px;
-}
+    /* Highlight for Bookkeeping as a premium service */
+    .service-card.premium {
+        background-color: #f9f7f2; /* Light Beige */
+        border: 1px solid #d4af37; /* Gold accent */
+    }
 
-.service-card ul li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
+    .service-card h3 {
+        color: #004d4d;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
 
-.service-card ul li::before {
-  content: "✓";
-  color: #22c55e;
-  margin-right: 10px;
-  font-weight: bold;
-}
+    .service-card p {
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+        color: #555;
+    }
 
-/* The "Hire Me" Section */
-.services-cta {
-  margin-top: 80px;
-  padding: 50px;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px dashed rgba(34, 197, 94, 0.3);
-  border-radius: 20px;
-  display: inline-block;
-}
+    .service-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        display: inline-block;
+    }
 
-.services-cta h2 {
-  color: #fff;
-  margin-bottom: 10px;
-}
+    .service-list li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+    }
 
-.services-cta p {
-  color: #94a3b8;
-  margin-bottom: 25px;
-}
-
+    .service-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #d4af37;
+        font-weight: bold;
 .hire-button {
   background: #22c55e;
   color: #0f172a;
@@ -315,56 +305,56 @@
             </div>
         </div>
     </section>
-<section class="services">
-  <div class="container">
-    <h2>How I Support Your Business</h2>
-    <p class="services-sub">
-      Clear support. Structured systems. Consistent execution.
-    </p>
+</style>
+
+<div class="services-container">
+    <div class="section-header">
+        <h2>How I Support Your Business</h2>
+        <p>Clear support. Structured systems. Consistent execution.</p>
+    </div>
 
     <div class="services-grid">
+        <div class="service-card">
+            <h3>Inbox & Email Management</h3>
+            <p>You stop missing important messages. I organize your inbox, prioritize emails, and keep communication flowing.</p>
+            <ul class="service-list">
+                <li>Inbox organization</li>
+                <li>Email prioritization</li>
+                <li>Follow-up tracking</li>
+            </ul>
+        </div>
 
-      <div class="service-card">
-        <h3>Inbox & Email Management</h3>
-        <p>You stop missing important messages. I organize your inbox, prioritize emails, and keep communication flowing.</p>
-        <ul>
-          <li>Inbox organization</li>
-          <li>Email prioritization</li>
-          <li>Follow-up tracking</li>
-        </ul>
-      </div>
+        <div class="service-card">
+            <h3>Calendar & Scheduling</h3>
+            <p>Your schedule stays clear and controlled. No double-bookings, no missed meetings.</p>
+            <ul class="service-list">
+                <li>Calendar management</li>
+                <li>Appointment scheduling</li>
+                <li>Reminders and coordination</li>
+            </ul>
+        </div>
 
-      <div class="service-card">
-        <h3>Calendar & Scheduling</h3>
-        <p>Your schedule stays clear and controlled. No double bookings, no missed meetings.</p>
-        <ul>
-          <li>Calendar management</li>
-          <li>Appointment scheduling</li>
-          <li>Reminders and coordination</li>
-        </ul>
-      </div>
+        <div class="service-card">
+            <h3>Lead & Client Tracking</h3>
+            <p>No more lost leads. Every contact is tracked, updated, and followed up properly.</p>
+            <ul class="service-list">
+                <li>Lead list management</li>
+                <li>Status tracking</li>
+                <li>Follow-up system</li>
+            </ul>
+        </div>
 
-      <div class="service-card">
-        <h3>Lead & Client Tracking</h3>
-        <p>No more lost leads. Every contact is tracked, updated, and followed up properly.</p>
-        <ul>
-          <li>Lead list management</li>
-          <li>Status tracking</li>
-          <li>Follow-up system</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <h3>Marketing Support</h3>
-        <p>Your brand stays active. I help you stay consistent with content and daily marketing tasks.</p>
-        <ul>
-          <li>Content scheduling</li>
-          <li>Basic content support</li>
-          <li>Consistency tracking</li>
-        </ul>
-      </div>
-
+        <div class="service-card premium">
+            <h3>Bookkeeping & Financial Oversight</h3>
+            <p>Your finances remain audit-ready and transparent. I bridge the gap between daily operations and financial health.</p>
+            <ul class="service-list">
+                <li>Expense tracking & categorization</li>
+                <li>Account reconciliation</li>
+                <li>Monthly financial snapshots</li>
+            </ul>
+        </div>
     </div>
+</div>
 
     <div class="services-cta">
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com&su=Let’s Work Together" target="_blank" class="btn primary">
