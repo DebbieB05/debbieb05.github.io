@@ -14,7 +14,6 @@
             --text-gray: #555;
         }
 
-        /* Essential Reset for Mobile */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { width: 100%; overflow-x: hidden; }
         body { font-family: 'Inter', sans-serif; background-color: #fff; color: #333; line-height: 1.6; }
@@ -42,7 +41,22 @@
             width: fit-content;
         }
 
-        /* Responsive Flex Cards */
+        .services-list { list-style: none; padding: 0; }
+        .services-list li { 
+            position: relative; 
+            padding-left: 25px; 
+            margin-bottom: 12px; 
+            font-size: 0.95rem; 
+            color: var(--text-gray);
+        }
+        .services-list li::before { 
+            content: "•"; 
+            color: var(--muted-gold); 
+            position: absolute; 
+            left: 0; 
+            font-weight: bold; 
+        }
+
         .work-card {
             display: flex; 
             background: #fff; 
@@ -53,29 +67,25 @@
             margin-bottom: 60px;
         }
 
-        .work-img { flex: 1 1 300px; background: #f9f9f9; }
+        .work-img { flex: 1 1 350px; background: #f9f9f9; }
+        .work-img img, .work-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
         .work-content { flex: 1 1 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
 
-        /* Tablet & Mobile Fixes */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.8rem !important; }
-            .hero { padding: 80px 0 60px !important; }
-            .about-section { padding: 60px 0 !important; gap: 40px !important; }
             .work-card { flex-direction: column !important; }
             .work-img { height: 250px; }
-            .work-img video, .work-img img { object-fit: cover; height: 100%; width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <nav style="height: 80px; display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #f5f5f5;">
-        <img src="assets/logo.png" alt="ANN DEBBIE BEDRIJO" style="height: 35px; width: auto;">
-        <div style="font-size: 0.6rem; font-weight: 700; color: var(--muted-gold); letter-spacing: 1px; text-transform: uppercase;">Virtual Support</div>
+        <img src="assets/images/ann-debbie-db-brand-logo.png" alt="ANN DEBBIE BEDRIJO" style="height: 40px; width: auto;">
+        <div style="font-size: 0.6rem; font-weight: 700; color: var(--muted-gold); letter-spacing: 1px; text-transform: uppercase;">Strategic Support</div>
     </nav>
 
-    <header class="hero" style="background: var(--warm-beige); padding: 120px 0 80px; text-align: center;">
+    <header style="background: var(--warm-beige); padding: 120px 0 80px; text-align: center;">
         <div class="container">
             <span class="hero-label">Your Dedicated Support Partner</span>
             <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--midnight-teal); margin-bottom: 20px; font-weight: 400;">Quietly keeping your business organized</h1>
@@ -86,10 +96,10 @@
         </div>
     </header>
 
-    <section class="container about-section" style="padding: 100px 0; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+    <section class="container" style="padding: 100px 0; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
         <div style="flex: 1 1 300px;">
             <div style="border-radius: 15px; overflow: hidden; box-shadow: 15px 15px 0 var(--midnight-teal);">
-                <img src="assets/profile.jpg" alt="Ann Debbie Bedrijo" style="width: 100%; display: block;">
+                <img src="assets/images/ann-debbie-professional-profile.jpg" alt="Ann Debbie Bedrijo" style="width: 100%; display: block;">
             </div>
         </div>
         <div style="flex: 1.5 1 300px;">
@@ -98,7 +108,7 @@
             <p style="margin-bottom: 20px; color: var(--text-gray); font-size: 0.95rem;">
                 I trained in bookkeeping using QuickBooks Online and mastered task management through tools like Asana and Slack to ensure that you are not getting someone learning on the job
             </p>
-            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 3px solid var(--muted-gold); padding-left: 15px; font-size: 1rem;">
+            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 3px solid var(--muted-gold); padding-left: 15px;">
                 You are getting someone who prepared before stepping in
             </p>
         </div>
@@ -106,40 +116,67 @@
 
     <section style="background: #fdfdfd; padding: 80px 0;">
         <div class="container">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal); text-align: center; margin-bottom: 50px;">Specialized Support</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal); text-align: center; margin-bottom: 50px;">What I Can Do For You</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
                 <div style="padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 10px;">Executive Admin</p>
-                    <p style="font-size: 0.9rem; color: var(--text-gray);">Inbox clean up Calendar management Task tracking Document organization</p>
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Executive Admin</p>
+                    <ul class="services-list">
+                        <li>Inbox organization and email clean-up</li>
+                        <li>Calendar management and scheduling</li>
+                        <li>Task tracking and follow-ups</li>
+                        <li>File and document organization</li>
+                    </ul>
                 </div>
                 <div style="padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 10px;">Operations</p>
-                    <p style="font-size: 0.9rem; color: var(--text-gray);">Bookkeeping using QuickBooks Online Travel planning and coordination</p>
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Operations & Finance</p>
+                    <ul class="services-list">
+                        <li>QuickBooks Online bookkeeping support</li>
+                        <li>Travel planning and coordination</li>
+                        <li>Basic financial tracking</li>
+                        <li>Detailed data entry and management</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="container" style="padding: 80px 0;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="hero-label">Portfolio</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal);">Systems & Operations Hub</h2>
+        </div>
+
         <div class="work-card">
             <div class="work-img">
-                <video width="100%" autoplay loop muted playsinline style="display: block;">
-                    <source src="assets/Fairy_Prince_and_Princess_Embrace.mp4" type="video/mp4">
+                <img src="assets/images/strategic-bookkeeping-financial-dashboard.jpg" alt="Financial Dashboard">
+            </div>
+            <div class="work-content">
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Strategic Bookkeeping</h3>
+                <p style="font-size: 0.9rem; color: var(--text-gray);">Audit-ready financial tracking and dashboard management for real-time business clarity.</p>
+            </div>
+        </div>
+
+        <div class="work-card" style="flex-direction: row-reverse;">
+            <div class="work-img">
+                <img src="assets/images/content planner.jpg" alt="Content Planner">
+            </div>
+            <div class="work-content">
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Workflow Management</h3>
+                <p style="font-size: 0.9rem; color: var(--text-gray);">Custom content planners and lead trackers built to keep your operations moving without friction.</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <div class="work-img" style="background: #000;">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/images/fairy-embrace.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="work-content">
-                <span class="hero-label">Visual Narrative</span>
-                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin: 10px 0;">Project Showcase</h3>
-                <p style="color: var(--text-gray); font-size: 0.95rem;">Managing complex creative workflows and digital assets with precision</p>
+                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Visual Narrative</h3>
+                <p style="font-size: 0.9rem; color: var(--text-gray);">Integrating cinematic assets into digital brand identities for a premium professional look.</p>
             </div>
         </div>
-    </section>
-
-    <section class="container" style="padding: 60px 0 100px; text-align: center;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal); margin-bottom: 20px;">Prepared for Responsibility</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--text-gray); font-size: 1rem;">
-            I managed a household handled finances and kept daily operations running for years Now I bring that same discipline into digital work I show up prepared and follow through
-        </p>
     </section>
 
     <footer style="background: var(--midnight-teal); color: white; padding: 80px 0 40px; text-align: center;">
