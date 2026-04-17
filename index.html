@@ -14,17 +14,19 @@
             --text-gray: #555;
         }
 
+        /* Core Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { width: 100%; overflow-x: hidden; }
         body { font-family: 'Inter', sans-serif; background-color: #fff; color: #333; line-height: 1.6; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
         
+        /* Typography */
         .hero-label { 
             color: var(--muted-gold); 
             font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
-            font-size: 0.7rem; 
+            font-size: 0.75rem; 
             display: block;
             margin-bottom: 15px;
         }
@@ -33,14 +35,17 @@
             display: inline-block;
             background: var(--midnight-teal);
             color: white !important;
-            padding: 18px 30px;
+            padding: 18px 35px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            width: fit-content;
+            transition: 0.3s ease;
         }
 
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Services Bullets */
         .services-list { list-style: none; padding: 0; }
         .services-list li { 
             position: relative; 
@@ -57,6 +62,7 @@
             font-weight: bold; 
         }
 
+        /* Layout Blocks */
         .work-card {
             display: flex; 
             background: #fff; 
@@ -67,15 +73,16 @@
             margin-bottom: 60px;
         }
 
-        .work-img { flex: 1 1 350px; background: #f9f9f9; }
+        .work-img { flex: 1 1 400px; background: #f9f9f9; min-height: 300px; }
         .work-img img, .work-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .work-content { flex: 1 1 300px; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .work-content { flex: 1 1 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
-            .work-card { flex-direction: column !important; }
-            .work-img { height: 250px; }
-            .about-flex { flex-direction: column !important; gap: 40px !important; }
+            h1 { font-size: 2.4rem !important; line-height: 1.2 !important; }
+            .work-content { padding: 30px; }
+            .work-img { flex: 1 1 250px; min-height: 250px; }
+            nav { height: auto !important; padding: 20px 5% !important; flex-direction: column; gap: 10px; text-align: center; }
         }
     </style>
 </head>
@@ -83,99 +90,113 @@
 
     <nav style="height: 100px; display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #f5f5f5;">
         <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="assets/images/ann-debbie-db-brand-logo.png" alt="Logo" style="height: 40px; width: auto;">
-            <span style="font-family: 'Playfair Display'; font-weight: 700; color: var(--midnight-teal); font-size: 1.1rem; letter-spacing: 1px;">ANN DEBBIE BEDRIJO</span>
+            <img src="assets/images/ann-debbie-db-brand-logo.png" alt="ANN DEBBIE BEDRIJO" style="height: 45px; width: auto;">
+            <span style="font-family: 'Playfair Display'; font-weight: 700; color: var(--midnight-teal); font-size: 1.2rem; letter-spacing: 1px;">ANN DEBBIE BEDRIJO</span>
         </div>
-        <div style="font-size: 0.6rem; font-weight: 700; color: var(--muted-gold); letter-spacing: 1px; text-transform: uppercase;">Strategic Virtual Support</div>
+        <div style="font-size: 0.65rem; font-weight: 700; color: var(--muted-gold); letter-spacing: 2px; text-transform: uppercase;">Strategic Virtual Support</div>
     </nav>
 
-    <header style="background: var(--warm-beige); padding: 120px 0 80px; text-align: center;">
+    <header style="background: var(--warm-beige); padding: 140px 0 100px; text-align: center;">
         <div class="container">
             <span class="hero-label">ANN DEBBIE BEDRIJO</span>
-            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--midnight-teal); margin-bottom: 20px; font-weight: 400;">Quietly keeping your business organized</h1>
-            <p style="max-width: 700px; margin: 0 auto 30px; color: var(--text-gray); font-size: 1rem;">
-                I support busy founders with structured systems clear workflows and reliable execution No guesswork No chaos Just consistent support
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.8rem; color: var(--midnight-teal); margin-bottom: 25px; font-weight: 400; line-height: 1.1;">Quietly keeping your business organized, on track, and moving forward.</h1>
+            <p style="max-width: 750px; margin: 0 auto 40px; color: var(--text-gray); font-size: 1.1rem; font-weight: 300;">
+                I support busy founders with structured systems, clear workflows, and reliable day-to-day execution. No guesswork. No chaos. Just consistent support you can depend on.
             </p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn">Connect With Me</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn">Start a Conversation</a>
         </div>
     </header>
 
-    <section class="container" style="padding: 100px 0; display: flex; align-items: center; gap: 80px; flex-wrap: wrap;" class="about-flex">
-        <div style="flex: 1 1 300px;">
-            <div style="border-radius: 15px; overflow: hidden; box-shadow: 20px 20px 0 var(--midnight-teal);">
+    <section class="container" style="padding: 120px 0; display: flex; align-items: center; gap: 80px; flex-wrap: wrap;">
+        <div style="flex: 1 1 350px;">
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 25px 25px 0 var(--midnight-teal);">
                 <img src="assets/images/ann-debbie-professional-profile.jpg" alt="ANN DEBBIE BEDRIJO" style="width: 100%; display: block;">
             </div>
         </div>
-        <div style="flex: 1.5 1 300px;">
-            <span class="hero-label">The Logical Choice</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--midnight-teal); margin-bottom: 25px;">I built my skills with intention</h2>
+        <div style="flex: 1.5 1 350px;">
+            <span class="hero-label">About Me</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal); margin-bottom: 25px;">I built my skills with intention before offering them to clients.</h2>
             <p style="margin-bottom: 20px; color: var(--text-gray); font-size: 1.05rem;">
-                I trained in bookkeeping using QuickBooks Online and mastered workflow tools like Asana and Slack before offering them to clients I am new to client work but not to responsibility I managed a household and finances for years and I bring that same discipline to your digital work
+                I trained in bookkeeping using QuickBooks Online and mastered task management using tools like Asana and Slack. I practiced real scenarios in inbox handling, scheduling, and digital organization. 
             </p>
-            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 4px solid var(--muted-gold); padding-left: 20px;">
-                You are getting someone who prepared before stepping in
+            <p style="margin-bottom: 25px; color: var(--text-gray); font-size: 1.05rem;">
+                I may be new to client work, but not to responsibility. I managed a household, handled finances, and kept daily operations running for years. Now I bring that same discipline into digital work.
+            </p>
+            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 4px solid var(--muted-gold); padding-left: 20px; font-size: 1.1rem; font-style: italic;">
+                "You’re not getting someone learning on the job. You’re getting someone who prepared before stepping in."
             </p>
         </div>
     </section>
 
-    <section style="background: #fdfdfd; padding: 80px 0; border-top: 1px solid #eee;">
+    <section style="background: #fdfdfd; padding: 100px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 50px;">
+            <div style="text-align: center; margin-bottom: 70px;">
                 <span class="hero-label">Capabilities</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal);">What I Can Do For You</h2>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--midnight-teal);">Expert Support Services</h2>
             </div>
-            <div style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); display: grid; gap: 30px;">
-                <div style="padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Admin & Finance</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+                
+                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Admin & Bookkeeping</p>
                     <ul class="services-list">
                         <li>Inbox organization and email clean-up</li>
                         <li>Calendar management and scheduling</li>
+                        <li>Task tracking and follow-ups</li>
                         <li>QuickBooks Online bookkeeping support</li>
                         <li>File and document organization</li>
                         <li>Travel planning and coordination</li>
                     </ul>
                 </div>
-                <div style="padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Social Media Management</p>
+
+                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Social Media (SMM)</p>
                     <ul class="services-list">
-                        <li>Content planning and scheduling</li>
-                        <li>Basic graphic design for social posts</li>
+                        <li>Content planning and grid scheduling</li>
+                        <li>Basic graphic design and visual assets</li>
                         <li>Engagement and community management</li>
                         <li>Hashtag research and profile optimization</li>
-                        <li>Visual narrative and asset management</li>
+                        <li>Workflow management for creative assets</li>
+                        <li>Consistency and follow-through</li>
                     </ul>
                 </div>
+
             </div>
+            <p style="text-align: center; margin-top: 50px; font-style: italic; color: #888; font-size: 1rem;">
+                Everything is handled with structure, clarity, and attention to detail.
+            </p>
         </div>
     </section>
 
-    <section class="container" style="padding: 80px 0;">
-        <div style="text-align: center; margin-bottom: 60px;">
+    <section class="container" style="padding: 120px 0;">
+        <div style="text-align: center; margin-bottom: 80px;">
             <span class="hero-label">Portfolio</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--midnight-teal);">Systems & Operations</h2>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal);">Strategic Operations Hub</h2>
         </div>
 
         <div class="work-card">
             <div class="work-img"><img src="assets/images/Notion client portal.jpg" alt="Notion Portal"></div>
             <div class="work-content">
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Strategic Notion Portal</h3>
-                <p style="font-size: 0.9rem; color: var(--text-gray);">Centralized hubs built to house project roadmaps and team assets in one high-performance dashboard.</p>
+                <span class="hero-label">Notion Architecture</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Client Hub Systems</h3>
+                <p style="color: var(--text-gray);">Building centralized Notion portals that house project roadmaps, brand assets, and communication in one organized dashboard.</p>
             </div>
         </div>
 
         <div class="work-card" style="flex-direction: row-reverse;">
-            <div class="work-img"><img src="assets/images/strategic-bookkeeping-financial-dashboard.jpg" alt="Bookkeeping"></div>
+            <div class="work-img"><img src="assets/images/strategic-bookkeeping-financial-dashboard.jpg" alt="Financial Tracking"></div>
             <div class="work-content">
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Strategic Bookkeeping</h3>
-                <p style="font-size: 0.9rem; color: var(--text-gray);">Maintaining financial integrity and audit-ready records through QuickBooks Online.</p>
+                <span class="hero-label">Operations</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Strategic Bookkeeping</h3>
+                <p style="color: var(--text-gray);">Providing audit-ready financial support and clear tracking to help founders make informed business decisions.</p>
             </div>
         </div>
 
         <div class="work-card">
-            <div class="work-img"><img src="assets/images/content planner.jpg" alt="Planner"></div>
+            <div class="work-img"><img src="assets/images/content planner.jpg" alt="Content Planner"></div>
             <div class="work-content">
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Social Strategy Planning</h3>
-                <p style="font-size: 0.9rem; color: var(--text-gray);">Custom trackers built to maintain a consistent online presence and content lifecycle.</p>
+                <span class="hero-label">Marketing Ops</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Content Lifecycle Planning</h3>
+                <p style="color: var(--text-gray);">Managing complex social media calendars and asset trackers to ensure consistent brand presence without reminders.</p>
             </div>
         </div>
 
@@ -184,17 +205,42 @@
                 <video autoplay loop muted playsinline><source src="assets/images/fairy-embrace.mp4" type="video/mp4"></video>
             </div>
             <div class="work-content">
-                <h3 style="font-family: 'Playfair Display'; margin-bottom: 10px;">Visual Brand Assets</h3>
-                <p style="font-size: 0.9rem; color: var(--text-gray);">Coordinating cinematic media to anchor premium brand identities.</p>
+                <span class="hero-label">Creative Management</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Visual Brand Assets</h3>
+                <p style="color: var(--text-gray);">Handling and coordinating premium digital media assets to maintain a high-end professional brand identity.</p>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--midnight-teal); color: white; padding: 100px 0 40px; text-align: center;">
+    <section style="background: var(--warm-beige); padding: 100px 0; text-align: center;">
         <div class="container">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 30px;">Ready to support your business</h2>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn" style="background: white; color: var(--midnight-teal) !important;">Contact ANN DEBBIE BEDRIJO</a>
-            <div style="margin-top: 60px; font-size: 0.7rem; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--midnight-teal); margin-bottom: 60px;">The Professional Standard</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+                <div>
+                    <h4 style="color: var(--muted-gold); margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem;">Systems First</h4>
+                    <p style="font-size: 0.9rem; color: #666;">I follow systems, not shortcuts. Accuracy is my priority.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--muted-gold); margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem;">Proactive Communication</h4>
+                    <p style="font-size: 0.9rem; color: #666;">I communicate clearly and consistently. You won’t need to chase me.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--muted-gold); margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem;">Reliability</h4>
+                    <p style="font-size: 0.9rem; color: #666;">I respect your time and priorities. You’ll see steady progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--midnight-teal); color: white; padding: 120px 0 50px; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 30px;">Ready to support your business from day one.</h2>
+            <p style="max-width: 600px; margin: 0 auto 50px; color: rgba(255,255,255,0.7); font-size: 1.1rem;">
+                If you need someone reliable, organized, and ready to help you reclaim your time, let’s talk.
+            </p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn" style="background: white; color: var(--midnight-teal) !important; padding: 22px 50px; font-size: 1rem;">Contact ANN DEBBIE BEDRIJO</a>
+            
+            <div style="margin-top: 100px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 2px;">
                 © 2026 ANN DEBBIE BEDRIJO | STRATEGIC VIRTUAL SUPPORT
             </div>
         </div>
