@@ -6,13 +6,6 @@
     <title>Ann Debbie Bedrijo | Strategic Operations & Growth Partner</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- SEO & Social Sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://debbieb05.github.io/">
-    <meta property="og:title" content="ANN DEBBIE BEDRIJO | Strategic Operations & Growth Partner">
-    <meta property="og:description" content="Supporting visionary founders with structured systems, bookkeeping, and SMM. Consistent support you can depend on.">
-    <meta property="og:image" content="assets/images/ann-debbie-brand-thumbnail.jpg">
-
     <style>
         :root {
             --midnight-teal: #004D4D;
@@ -30,32 +23,31 @@
         
         /* Navigation */
         nav {
-            height: 80px;
+            height: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.95);
+            background: #fff;
             padding: 0 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #f5f5f5;
-            backdrop-filter: blur(10px);
         }
 
-        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
         .nav-links a { 
             text-decoration: none; 
             color: var(--text-gray); 
-            font-size: 0.75rem; 
-            font-weight: 600; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--muted-gold); }
 
-        /* Typography & UI */
+        /* Hero & Typography */
         .hero-label { 
             color: var(--muted-gold); 
             font-weight: 700; 
@@ -76,13 +68,10 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: 0.3s ease;
-            border: none;
-            cursor: pointer;
         }
-
         .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        /* Services List */
+        /* Services Bullets */
         .services-list { list-style: none; padding: 0; }
         .services-list li { 
             position: relative; 
@@ -109,28 +98,23 @@
             flex-wrap: wrap;
             margin-bottom: 60px;
         }
-
-        .work-img { flex: 1 1 400px; background: #f9f9f9; min-height: 300px; }
+        .work-img { flex: 1 1 400px; background: #f9f9f9; min-height: 400px; }
         .work-img img, .work-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
         .work-content { flex: 1 1 300px; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
 
-        /* Footer Links */
-        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: white; text-decoration: none; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 20px; transition: 0.3s; }
-        .social-links a:hover { background: var(--muted-gold); border-color: var(--muted-gold); }
-
         @media (max-width: 768px) {
-            nav { height: auto; padding: 20px 5%; flex-direction: column; gap: 15px; }
-            .nav-links { gap: 15px; }
+            nav { height: auto; padding: 20px 5%; flex-direction: column; gap: 15px; text-align: center; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
             h1 { font-size: 2.4rem !important; }
             .work-content { padding: 30px; }
         }
     </style>
 </head>
-<body id="home">
+<body>
 
-    <nav>
-        <div style="display: flex; align-items: center; gap: 12px;">
+    <nav id="home">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="assets/images/ann-debbie-db-brand-logo.png" alt="Logo" style="height: 40px; width: auto;">
             <span style="font-family: 'Playfair Display'; font-weight: 700; color: var(--midnight-teal); font-size: 1.1rem; letter-spacing: 1px;">ANN DEBBIE BEDRIJO</span>
         </div>
         <ul class="nav-links">
@@ -142,103 +126,135 @@
         </ul>
     </nav>
 
-    <header style="background: var(--warm-beige); padding: 120px 0 100px; text-align: center;">
+    <header style="background: var(--warm-beige); padding: 140px 0 100px; text-align: center;">
         <div class="container">
-            <span class="hero-label">Strategic Operations Partner</span>
-            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--midnight-teal); margin-bottom: 25px; font-weight: 400; line-height: 1.1;">Quietly keeping your business organized, on track, and moving forward.</h1>
-            <p style="max-width: 750px; margin: 0 auto 40px; color: var(--text-gray); font-size: 1.1rem;">
-                I support busy founders with structured systems, clear workflows, and reliable day-to-day execution.
+            <span class="hero-label">ANN DEBBIE BEDRIJO</span>
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.8rem; color: var(--midnight-teal); margin-bottom: 25px; font-weight: 400; line-height: 1.1;">Quietly keeping your business organized, on track, and moving forward.</h1>
+            <p style="max-width: 750px; margin: 0 auto 40px; color: var(--text-gray); font-size: 1.1rem; font-weight: 300;">
+                I support busy founders with structured systems, clear workflows, and reliable day-to-day execution. No guesswork. No chaos. Just consistent support you can depend on.
             </p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" class="btn">Book a Strategy Call</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn">Start a Conversation</a>
         </div>
     </header>
 
-    <section id="about" class="container" style="padding: 100px 0; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+    <section id="about" class="container" style="padding: 120px 0; display: flex; align-items: center; gap: 80px; flex-wrap: wrap;">
         <div style="flex: 1 1 350px;">
-            <div style="border-radius: 20px; overflow: hidden; box-shadow: 20px 20px 0 var(--midnight-teal);">
-                <!-- Updated Image Source -->
-                <img src="assets/images/adb-professional-profile.jpg" alt="Ann Debbie Bedrijo" style="width: 100%; display: block;">
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 25px 25px 0 var(--midnight-teal);">
+                <img src="assets/images/adb-professional-profile.jpg" alt="ANN DEBBIE BEDRIJO" style="width: 100%; display: block;">
             </div>
         </div>
         <div style="flex: 1.5 1 350px;">
-            <span class="hero-label">The Vision</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal); margin-bottom: 25px;">Skills built with intention.</h2>
-            <p style="margin-bottom: 20px; color: var(--text-gray);">
-                I’ve mastered the core pillars of business growth: from bookkeeping in QuickBooks to architecting complex workflows in Notion and Asana.
+            <span class="hero-label">About Me</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal); margin-bottom: 25px;">I built my skills with intention before offering them to clients.</h2>
+            <p style="margin-bottom: 20px; color: var(--text-gray); font-size: 1.05rem;">
+                I trained in bookkeeping using QuickBooks Online and mastered task management using tools like Asana and Slack. I practiced real scenarios in inbox handling, scheduling, and digital organization. 
             </p>
-            <p style="margin-bottom: 25px; color: var(--text-gray);">
-                My background in managing operations for years means you aren't hiring someone to "learn on the job"—you're hiring someone who has already prepared for the responsibility.
+            <p style="margin-bottom: 25px; color: var(--text-gray); font-size: 1.05rem;">
+                I managed a household, handled finances, and kept daily operations running for years. Now I bring that same discipline into digital work.
             </p>
-            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 4px solid var(--muted-gold); padding-left: 20px; font-style: italic;">
-                "Structure creates freedom. I provide the structure so you can reclaim your freedom."
+            <p style="color: var(--midnight-teal); font-weight: 600; border-left: 4px solid var(--muted-gold); padding-left: 20px; font-size: 1.1rem; font-style: italic;">
+                "You’re not getting someone learning on the job. You’re getting someone who prepared before stepping in."
             </p>
         </div>
     </section>
 
-    <section id="services" style="background: #fdfdfd; padding: 100px 0; border-top: 1px solid #eee;">
+    <section id="services" style="background: #fdfdfd; padding: 100px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <span class="hero-label">Expertise</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--midnight-teal);">Specialized Support</h2>
+            <div style="text-align: center; margin-bottom: 70px;">
+                <span class="hero-label">Capabilities</span>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--midnight-teal);">Expert Support Services</h2>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Admin & Bookkeeping</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Admin & Bookkeeping</p>
                     <ul class="services-list">
-                        <li>Inbox & Calendar Mastery</li>
-                        <li>QuickBooks Online Management</li>
-                        <li>Standard Operating Procedures (SOPs)</li>
-                        <li>Financial Record Cleanup</li>
+                        <li>Inbox organization and email clean-up</li>
+                        <li>Calendar management and scheduling</li>
+                        <li>Task tracking and follow-ups</li>
+                        <li>QuickBooks Online bookkeeping support</li>
+                        <li>File and document organization</li>
+                        <li>Travel planning and coordination</li>
                     </ul>
                 </div>
-                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px;">
-                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 20px; text-transform: uppercase; font-size: 0.8rem;">Strategic Growth</p>
+                <div style="padding: 40px; background: #fff; border: 1px solid #eee; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                    <p style="color: var(--muted-gold); font-weight: bold; margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Social Media (SMM)</p>
                     <ul class="services-list">
-                        <li>Notion Architecture & Setup</li>
-                        <li>Content Lifecycle Planning</li>
-                        <li>Social Media Engagement</li>
-                        <li>Visual Brand Asset Management</li>
+                        <li>Content planning and grid scheduling</li>
+                        <li>Basic graphic design and visual assets</li>
+                        <li>Engagement and community management</li>
+                        <li>Hashtag research and profile optimization</li>
+                        <li>Workflow management for creative assets</li>
+                        <li>Consistency and follow-through</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="container" style="padding: 100px 0;">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <span class="hero-label">Case Studies</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal);">Operational Impact</h2>
+    <section id="portfolio" class="container" style="padding: 120px 0;">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <span class="hero-label">Portfolio</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--midnight-teal);">Strategic Operations Hub</h2>
         </div>
 
-        <!-- Notion Hub -->
+        <!-- Project 1 -->
         <div class="work-card">
             <div class="work-img"><img src="assets/images/Notion client portal.jpg" alt="Notion Portal"></div>
             <div class="work-content">
-                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Centralized Business Hubs</h3>
-                <p style="color: var(--text-gray);">Custom-built Notion ecosystems that house everything from project roadmaps to financial goals, eliminating the friction of scattered data.</p>
+                <span class="hero-label">Notion Architecture</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Client Hub Systems</h3>
+                <p style="color: var(--text-gray);">A founder's business shouldn't live across 10 different tabs and scattered notes. I built a centralized Notion portal that houses project roadmaps, brand assets, SOPs, and client communication in one clean dashboard, so nothing gets lost and everything stays accessible. The result: less time searching, more time executing.</p>
+            </div>
+        </div>
+
+        <div class="work-card" style="flex-direction: row-reverse;">
+            <div class="work-img"><img src="assets/images/strategic-bookkeeping-financial-dashboard.jpg" alt="Financial Tracking"></div>
+            <div class="work-content">
+                <span class="hero-label">Operations</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Strategic Bookkeeping</h3>
+                <p style="color: var(--text-gray);">Messy finances slow down decision-making. I set up an audit-ready bookkeeping system using QuickBooks Online, with clear expense tracking, categorized transactions, and organized records that give founders a real-time picture of where their money is going. No more guessing at the end of the month.</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <div class="work-img"><img src="assets/images/content planner.jpg" alt="Content Planner"></div>
+            <div class="work-content">
+                <span class="hero-label">Marketing Ops</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Content Lifecycle Planning</h3>
+                <p style="color: var(--text-gray);">Inconsistent posting kills brand momentum. I built a structured social media calendar and asset tracker that maps out content weeks in advance from ideation to scheduling, so the brand stays active and consistent without the founder needing to micromanage every post..</p>
+            </div>
+        </div>
+
+        <div class="work-card" style="flex-direction: row-reverse;">
+            <div class="work-img" style="background: #000;">
+                <video autoplay loop muted playsinline><source src="assets/images/fairy-embrace.mp4" type="video/mp4"></video>
+            </div>
+            <div class="work-content">
+                <span class="hero-label">Creative Management</span>
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px;">Visual Brand Assets</h3>
+                <p style="color: var(--text-gray);">A brand's visuals need to feel intentional, not thrown together. I organized and managed a library of premium digital media assets, graphics, videos, and templates, so every piece of content published reflects a polished, cohesive brand identity without the last-minute scramble..</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact" style="background: var(--midnight-teal); color: white; padding: 100px 0 50px; text-align: center;">
+    <footer id="contact" style="background: var(--midnight-teal); color: white; padding: 120px 0 50px; text-align: center;">
         <div class="container">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">Ready to scale with stability?</h2>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: 40px;">Direct: +63 994 607 6378</p>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 30px;">Ready to support your business.</h2>
+            <p style="max-width: 600px; margin: 0 auto 10px; color: rgba(255,255,255,0.7); font-size: 1.1rem;">
+                Let’s reclaim your time.
+            </p>
+            <p style="margin-bottom: 40px; font-weight: 600; letter-spacing: 1px;">+63 994 607 6378</p>
             
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" class="btn" style="background: white; color: var(--midnight-teal) !important;">Send an Email</a>
-            
-            <div class="social-links">
-                <!-- LinkedIn Link Added -->
-                <a href="https://www.linkedin.com/in/ann-debbie-bedrijo-75a74a300/" target="_blank">LinkedIn</a>
-                <!-- WhatsApp Link Added -->
-                <a href="https://wa.me/639946076378" target="_blank">WhatsApp</a>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=debeebedrijo72@gmail.com" target="_blank" class="btn" style="background: white; color: var(--midnight-teal) !important;">Email Me</a>
+                <a href="https://www.linkedin.com/in/ann-debbie-bedrijo-75a74a300/" target="_blank" class="btn" style="background: transparent; border: 1px solid white;">LinkedIn Profile</a>
             </div>
-
-            <div style="margin-top: 80px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px;">
+            
+            <div style="margin-top: 100px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 2px;">
                 © 2026 ANN DEBBIE BEDRIJO | STRATEGIC VIRTUAL SUPPORT
             </div>
         </div>
     </footer>
 
 </body>
-</html>
+</html>     
